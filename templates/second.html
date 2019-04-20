@@ -1,0 +1,13 @@
+
+{% extends 'base.html' %}
+{% block content %}
+    <h1>
+        Hello it works in second
+    </h1>
+    <ul>
+        {% for list in my_list %}
+            <li> {{forloop.counter}}  - {{list}} </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

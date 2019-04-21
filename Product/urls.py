@@ -2,7 +2,6 @@ from django.urls import path
 
 from Product.views import (
     product_detail_view,
-    product_create_view,
     dynamic_lookup_view,
     )
 

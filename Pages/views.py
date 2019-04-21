@@ -12,4 +12,14 @@ def second_view(request,*args , **kwargs):
         "user_name" : "this is user name",
         "my_list"   : [10,20,30,40]
     }
-    return render(request,'second.html',contex)
+    return render(request,'index.html',contex)
+
+def next_page(request):
+    context = {}
+
+    return  render(request, 'nextPage.html', context)
+
+def about_page(request):
+    context = {}
+
+    return render(request, 'about.html', context)

@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+
+{% block active_blog %}
+						<ul class="nav navbar-nav menu_nav ml-auto">
+							<li class="nav-item "><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item active"><a class="nav-link" href="/about_page/">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="departments.html">Department</a></li>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Pages</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+								</ul>
+							</li>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Blog</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+								</ul>
+							</li>
+							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						</ul>
+{% endblock %}
+
+
+{% block feature_area %}
+
+
+
+{% endblock %}
+
+	{% block about_area %}
+	<section class="about_area lite_bg">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-12 col-md-5">
+					<div class="about_details lite_bg">
+						<h2>Dhaka University Medicare Center</h2>
+						<p>
+                            The Medical Centre of the University of Dhaka, located near the Science Annex Building, offers free medical service and free pathological examinations to students,
+                            teachers and staffs of the University and also family members of the teachers and staffs.
+                            The Centre provides service round the clock, seven days a week, with 30 doctors working in different shifts. <br>
+
+                            The Centre also has dental unit, eye unit, x-ray department and two ambulances. The Centre has in its premises arrangement for 30 bed
+                            accommodation so that students suffering from such contagious diseases as chicken pox, mumps, etc. may be taken care of in isolation. <br>
+
+                            A small Operation Theatre has been established in the Centre to meet minor surgeries. <br>
+
+                            Students get medicine from the Centre free of cost and employees get medicine at cost price.
+                            Physiotherapy service is also given to senior members and disable patients of the university family.
+                            A Homeo Unit, consisting of 6 Homeo doctors, provides treatment and medicines free of cost to the students,
+                            teachers and staffs and their family members. <br>
+                            Head of Office:  Dr. A.K.M. Abdur Rahman <br>
+                            Designation:  Chief Medical Officer (Acting) <br>
+                        </p>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!--================ End About Area =================-->
+	{% endblock %}

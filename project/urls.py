@@ -15,17 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from Pages.views import home_view,second_view
+from Pages.views import *
 from Product.views import (
-    product_detail_view,
     product_create_view,
-    dynamic_lookup_view,
     )
+from Blog.views import article_detail_view
 
 urlpatterns = [
     path('product/', include('Product.urls')),
     path('', home_view, name='home'),
     path('second/', second_view, name='second'),
+    path('next_page/', next_page , name='nextPage'),
+    path('about_page/', about_page , name='aboutPage'),
     path('create/', product_create_view, name='details'),
+    path('article/', article_detail_view, name='article_detail'),
     path('admin/', admin.site.urls),
 ]

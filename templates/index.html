@@ -40,8 +40,8 @@
 						<a href="mailto:registrar@du.ac.bd"><span class="lnr lnr-envelope"></span> <span class="text"><span class="text">support@medicalcenter.du.ac.bd</span></span></a>
 						<a href="#" class="primary-btn text-uppercase">Appointment</a>
                         {% if user.is_authenticated %}
-                            <a href="#" class="primary-btn text-uppercase nav-link">My Profile</a>
-                            <a href="#" class="primary-btn text-uppercase nav-link">Sign Out</a>
+                            <a href="{% url 'my_profile' %}" class="primary-btn text-uppercase nav-link">My Profile</a>
+                            <a href="{% url 'logout' %}" class="primary-btn text-uppercase nav-link">Sign Out</a>
                         {% else %}
 						<a href="{% url 'login_signup:register' %}" class="primary-btn text-uppercase nav-link">Create Account</a>
 						<a href="{% url 'login_signup:user_login' %}" class="primary-btn text-uppercase">Sign In</a>

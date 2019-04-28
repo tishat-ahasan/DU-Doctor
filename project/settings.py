@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'Pages',
     'Blog',
     'login_signup',
+    'MyProfile'
 ]
 
 MIDDLEWARE = [

@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     #own app
 
     'Pages',
-    'Blog',
     'login_signup',
     'MyProfile',
     'OnlineAdvice'

@@ -23,7 +23,7 @@ from MyProfile import views as MyProfile_view
 from Pages.views import *
 from OnlineAdvice.views import *
 
-from Blog.views import article_detail_view
+
 
 urlpatterns = [
 
@@ -32,7 +32,6 @@ urlpatterns = [
     path('xyz/', profileShowing, name='profile'),
     path('next_page/', next_page , name='nextPage'),
     path('about_page/', about_page , name='aboutPage'),
-    path('article/', article_detail_view, name='article_detail'),
     path('admin/', admin.site.urls),
     url(r'^login_signup/',include('login_signup.urls')),
     url(r'^logout/$', login_signup_view.user_logout, name='logout'),

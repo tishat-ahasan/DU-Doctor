@@ -17,28 +17,27 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url,include
 
-from MyProfile.views import profileShowing, get_name
+from MyProfile.views import profileShowing
 from login_signup import views as login_signup_view
 from MyProfile import views as MyProfile_view
 from Pages.views import *
-from Product.views import (
-    product_create_view,
-    )
+from OnlineAdvice.views import *
+
 from Blog.views import article_detail_view
 
 urlpatterns = [
-    path('product/', include('Product.urls')),
+
     path('', home_view, name='home'),
     path('second/', second_view, name='second'),
     path('xyz/', profileShowing, name='profile'),
     path('next_page/', next_page , name='nextPage'),
-    path('your-name/', get_name , name='getName'),
     path('about_page/', about_page , name='aboutPage'),
-    path('create/', product_create_view, name='details'),
     path('article/', article_detail_view, name='article_detail'),
     path('admin/', admin.site.urls),
     url(r'^login_signup/',include('login_signup.urls')),
     url(r'^logout/$', login_signup_view.user_logout, name='logout'),
     url(r'^my_profile/$',MyProfile_view.profileShowing,name='my_profile'),
+    url(r'^online_advice/$', MessageListView.as_view(), name='online_advice'),
+    url(r'^new_message/$', MessageCreateView.as_view(), name='new_message')
 
 ]

@@ -41,11 +41,12 @@ INSTALLED_APPS = [
 
 
     #own app
-    'Product',
+
     'Pages',
     'Blog',
     'login_signup',
-    'MyProfile'
+    'MyProfile',
+    'OnlineAdvice'
 ]
 
 MIDDLEWARE = [

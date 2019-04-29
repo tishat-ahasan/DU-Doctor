@@ -1,32 +1,47 @@
 {% extends 'index.html' %}
 
+{% load staticfiles%}
+
+{% block homebanner %}
+<section class=class="banner_inner">
+		<div>
+			<img src="{% static 'img/banner/DUMedicalCenter.jpg' %}" class="center"/>
+			<figcaption class="center">Fig.1 - Dhaka university Medical Center</figcaption>
+		</div>
+
+</section>
+
+{% endblock %}
+
+
+
 {% block active_blog %}
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item "><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item "><a class="nav-link" href="{% url 'home' %}">Home</a></li>
 							<li class="nav-item active"><a class="nav-link" href="/about_page/">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="departments.html">Department</a></li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
-									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						<li class="nav-item"><a class="nav-link" href="departments.html">Department</a></li>
+						<li class="nav-item submenu dropdown">
+							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							 aria-expanded="false">Notice</a>
+							<ul class="dropdown-menu">
+								<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+								<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+							</ul>
+						</li>
+						<li class="nav-item submenu dropdown">
+							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+							 aria-expanded="false">Contacts</a>
+							<ul class="dropdown-menu">
+								<li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+								<li class="nav-item"><a class="nav-link" href="elements.html">Medical</a></li>
+							</ul>
+						</li>
 						</ul>
 {% endblock %}
 
 
 {% block feature_area %}
+
 
 
 
@@ -46,8 +61,19 @@
 
                             The Centre also has dental unit, eye unit, x-ray department and two ambulances. The Centre has in its premises arrangement for 30 bed
                             accommodation so that students suffering from such contagious diseases as chicken pox, mumps, etc. may be taken care of in isolation. <br>
+							<br></p>
 
-                            A small Operation Theatre has been established in the Centre to meet minor surgeries. <br>
+						<section class=class="banner_inner">
+							<div>
+								<img src="{% static 'img/banner/operationtheatre.jpg' %}" class="center"/>
+								<figcaption class="center">Fig.2 - Medical Center Operation Theatre</figcaption>
+							</div>
+
+						</section>
+						<br>
+
+                         <p>
+							A small Operation Theatre has been established in the Centre to meet minor surgeries. <br>
 
                             Students get medicine from the Centre free of cost and employees get medicine at cost price.
                             Physiotherapy service is also given to senior members and disable patients of the university family.
@@ -64,5 +90,7 @@
 
 		</div>
 	</section>
+							{% endblock %}
 	<!--================ End About Area =================-->
-	{% endblock %}
+
+

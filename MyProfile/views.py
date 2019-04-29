@@ -33,18 +33,3 @@ def profileShowing(request,*args,**kwargs):
         'obj':u
         }
         return render(request,'MyProfile/my_profile.html',contex)
-
-
-
-
-
-def get_name(request):
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-       print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-       print(request.POST['username'])
-       return HttpResponseRedirect(reverse('second'))
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = NameForm()
-        return render(request, 'MyProfile/name.html', {})

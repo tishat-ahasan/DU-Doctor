@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" rel="stylesheet">
+</head>
+
+<style>
+    .center {
+        /* this will keep the content center */
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    .msg-group {
+    	position: absolute;
+        max-width: 720px;
+        height: 92%;
+        overflow-y: scroll;  /*if the content beyond width and height, use the scrollbar*/
+    }
+
+    .card {
+        padding: 10px 0 10px 0;
+    }
+
+    .input-group {
+    	position: absolute;
+        height: 8%;
+    	bottom: 0;
+    }
+
+    .btn {
+        height:100%;
+    }
+  </style>
+
+
+<body>
+        <div class = "center" >
+                <form method="post" action="{% url 'new_message' %}">
+                    {% csrf_token %}
+                	<textarea id="input-box" rows="5" cols="30" placeholder="Say something..." name="content" align = "center"></textarea>
+                    <span></span>
+                        <button class="btn btn-primary" type="submit">send</button>
+               </form>
+                </div>
+</body>
+</html>

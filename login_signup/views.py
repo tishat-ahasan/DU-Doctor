@@ -1,5 +1,5 @@
 # login_signup/views.py
-
+from django.contrib import messages
 from django.shortcuts import render
 from login_signup.forms import UserForm,UserProfileInfoForm
 from django.contrib.auth import authenticate, login, logout
@@ -67,6 +67,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request,user)
+                messages.success(request, 'Signed in successfully!')
                 return HttpResponseRedirect(reverse('second'))
             else:
                 return HttpResponse("Your account was inactive.")

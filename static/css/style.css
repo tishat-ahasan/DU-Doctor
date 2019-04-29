@@ -168,13 +168,13 @@ button:focus {
   background: -o-linear-gradient(to right, #0ba9ff 0%, #56d9ff 51%, #0ba9ff 100%);
   background: linear-gradient(to right, #0ba9ff 0%, #56d9ff 51%, #0ba9ff 100%);
   background-size: 200% auto;
-  padding: 0px 38px;
+  padding: 0px 0px;
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 300px;
   line-height: 50px;
-  border-radius: 50px;
+  border-radius: 150px;
   outline: none !important;
   box-shadow: 0px 0px 15px rgba(108, 39, 255, 0.3);
   text-align: center;

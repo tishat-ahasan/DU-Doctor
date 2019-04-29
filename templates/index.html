@@ -35,16 +35,16 @@
 
 						</select>
 					</div>
-					<div class="col-lg-9 col-sm-6 col-8 header-top-left ">
-						<a href="tel:+8801798-762920"><span class="lnr lnr-phone-handset"></span> <span class="text"><span class="text">01798-762920</span></span></a>
-						<a href="mailto:registrar@du.ac.bd"><span class="lnr lnr-envelope"></span> <span class="text"><span class="text">support@medicalcenter.du.ac.bd</span></span></a>
-						<a href="#" class="primary-btn text-uppercase">Appointment</a>
+					<div class="col-lg-9 col-sm-8 col-8 header-top-right ">
+						<a href="tel:+8801798-762920"><span class="lnr lnr-phone-handset"></span> <span class="text"><span class="text"></span></span></a>
+						<a href="mailto:registrar@du.ac.bd"><span class="lnr lnr-envelope"></span> <span class="text"><span class="text">support</span></span></a>
+						<a href="#" >Appointment</a>
                         {% if user.is_authenticated %}
-                            <a href="{% url 'my_profile' %}" class="primary-btn text-uppercase nav-link">My Profile</a>
-                            <a href="{% url 'logout' %}" class="primary-btn text-uppercase nav-link">Sign Out</a>
+                            <a href="{% url 'my_profile' %}" > Profile </a>
+                            <a href="{% url 'logout' %}">Log Out</a>
                         {% else %}
-						<a href="{% url 'login_signup:register' %}" class="primary-btn text-uppercase nav-link">Create Account</a>
-						<a href="{% url 'login_signup:user_login' %}" class="primary-btn text-uppercase">Sign In</a>
+						<a href="{% url 'login_signup:register' %}">Create Account</a>
+						<a href="{% url 'login_signup:user_login' %}">Login</a>
                         {% endif %}
 					</div>
 				</div>
@@ -107,6 +107,19 @@
 		</div>
 	</header>
 	<!--================ End Header Menu Area =================-->
+
+
+	<div class="form-group">
+        {% if messages  %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>
+                    <div class="alert alert-success" style="text:green">{{message}}</div>
+                </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
 
 	<!--================ Start Home Banner Area =================-->
 	<section class="home_banner_area">

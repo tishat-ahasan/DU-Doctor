@@ -14,6 +14,13 @@ def second_view(request,*args , **kwargs):
     }
     return render(request,'index.html',contex)
 
+def third_view(request,*args , **kwargs):
+    print(request.user)
+    contex = {
+
+    }
+    return render(request,'chat.html',contex)
+
 def next_page(request):
     context = {}
 

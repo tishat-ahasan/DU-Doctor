@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a25a2de-2fa0-4e1e-894f-cd3a2910eb3a" name="Default Changelist" comment="" />
+    <list default="true" id="4a25a2de-2fa0-4e1e-894f-cd3a2910eb3a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/MyProfile/templates/MyProfile/edit_appointment_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyProfile/templates/MyProfile/edit_appointment_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,15 +35,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PostNotice/templates/PostNotice/show_notice.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-26">
@@ -48,6 +42,15 @@
               <folding>
                 <element signature="n#style#0;n#iframe#0;n#p#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MyProfile/templates/MyProfile/edit_appointment_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-93">
+              <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -149,8 +152,8 @@
       <find>collapse</find>
       <find>margin</find>
       <find>margin-top</find>
-      <find>fav</find>
       <find>navbar-</find>
+      <find>fav</find>
     </findStrings>
     <replaceStrings>
       <replace>login_signup</replace>
@@ -205,7 +208,6 @@
         <option value="$PROJECT_DIR$/MyProfile/templates/MyProfile/appointment_list.html" />
         <option value="$PROJECT_DIR$/MyProfile/admin.py" />
         <option value="$PROJECT_DIR$/MyProfile/views.py" />
-        <option value="$PROJECT_DIR$/MyProfile/templates/MyProfile/edit_appointment_form.html" />
         <option value="$PROJECT_DIR$/Pages/views.py" />
         <option value="$PROJECT_DIR$/project/urls.py" />
         <option value="$PROJECT_DIR$/templates/contacts.html" />
@@ -217,6 +219,7 @@
         <option value="$PROJECT_DIR$/login_signup/views.py" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/MyProfile/templates/MyProfile/edit_appointment_form.html" />
       </list>
     </option>
   </component>
@@ -427,8 +430,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="39" y="27" width="1327" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2101227" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2101227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -439,7 +443,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.494705" visible="true" weight="0.32066116" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.494705" visible="true" weight="0.32066116" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.37670198" side_tool="true" weight="0.22585924" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3289689" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -665,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyProfile/templates/MyProfile/edit_appointment_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PostNotice/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -789,6 +786,13 @@
           <folding>
             <element signature="n#style#0;n#iframe#0;n#p#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyProfile/templates/MyProfile/edit_appointment_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93">
+          <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
         </state>
       </provider>
     </entry>

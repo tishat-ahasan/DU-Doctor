@@ -21,10 +21,9 @@ from django.conf.urls.static import static
 
 from MyProfile.views import profileShowing
 from login_signup import views as login_signup_view
-from MyProfile import views as MyProfile_view
+from MyProfile.views import *
 from Pages.views import *
 from OnlineAdvice.views import *
-
 from PostNotice.views import *
 
 urlpatterns = [
@@ -37,11 +36,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^login_signup/',include('login_signup.urls')),
     url(r'^logout/$', login_signup_view.user_logout, name='logout'),
-    url(r'^my_profile/$',MyProfile_view.profileShowing,name='my_profile'),
+    url(r'^my_profile/$',profileShowing,name='my_profile'),
     url(r'^online_advice/$', MessageListView.as_view(), name='online_advice'),
     url(r'^new_message/$', MessageCreateView.as_view(), name='new_message'),
     url(r'^show_notice/$', showNotice.as_view(), name='show_notice'),
     url(r'^post_notice/$', postNotice.as_view(), name='post_notice'),
+    url(r'^appointment/$', appointmet_view, name='appointment'),
+    url(r'^appointment_list/$', appointment_list_view, name='appointment_list'),
+    url(r'^today_appointment/$', today_appointment_view, name='today_appointment'),
 ]
 
 if settings.DEBUG:

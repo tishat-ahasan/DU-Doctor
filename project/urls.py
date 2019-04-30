@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url,include
+from django.conf import settings
+from django.conf.urls.static import static
 
 from MyProfile.views import profileShowing
 from login_signup import views as login_signup_view
@@ -23,7 +25,7 @@ from MyProfile import views as MyProfile_view
 from Pages.views import *
 from OnlineAdvice.views import *
 
-
+from PostNotice.views import *
 
 urlpatterns = [
 
@@ -37,6 +39,10 @@ urlpatterns = [
     url(r'^logout/$', login_signup_view.user_logout, name='logout'),
     url(r'^my_profile/$',MyProfile_view.profileShowing,name='my_profile'),
     url(r'^online_advice/$', MessageListView.as_view(), name='online_advice'),
-    url(r'^new_message/$', MessageCreateView.as_view(), name='new_message')
-
+    url(r'^new_message/$', MessageCreateView.as_view(), name='new_message'),
+    url(r'^show_notice/$', showNotice.as_view(), name='show_notice'),
+    url(r'^post_notice/$', postNotice.as_view(), name='post_notice'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

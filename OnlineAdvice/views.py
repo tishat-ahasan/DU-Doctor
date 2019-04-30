@@ -25,7 +25,7 @@ class MessageListView(ListView):
     model = Message
     template_name = 'OnlineAdvice/online_advice.html'
     context_object_name = 'messages'
-    # ordering = ['-date_posted']
+    ordering = ['-date_posted']
 
 class MessageCreateView(CreateView):
     model = Message

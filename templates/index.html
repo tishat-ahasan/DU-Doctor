@@ -102,7 +102,11 @@
 							<li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
 							<li class="nav-item "><a class="nav-link" href="{% url 'aboutPage' %}">About</a></li>
 							<li class="nav-item"><a class="nav-link" href="departments.html">Department</a></li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+{#                            {% if user.username == "ludwigprandtl" %}#}
+{#							<li class="nav-item"><a class="nav-link" href="{% url 'post_notice' %}">Post Notice</a></li>#}
+{#                            {% else %}#}
+                             <li class="nav-item"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
+{#                            {% endif %}#}
 							{% if user.is_authenticated %}
 							<li class="nav-item"><a class="nav-link" href="{% url 'online_advice' %}">Online Advice </a></li>
 							{% endif %}

@@ -24,3 +24,7 @@ def about_page(request):
     context = {}
 
     return render(request, 'about.html', context)
+
+def contact_view(request):
+    context = {}
+    return render(request, 'contacts.html', context)

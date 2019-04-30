@@ -413,7 +413,7 @@ button:focus {
   .header-top .header-top-right {
     text-align: right; }
     .header-top .header-top-right a {
-      margin-right: 40px; }
+      margin-right: 20px; }
       .header-top .header-top-right a:last-child {
         margin-right: 0; }
       .header-top .header-top-right a .lnr {

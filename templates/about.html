@@ -16,27 +16,21 @@
 
 
 {% block active_blog %}
-						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item "><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-							<li class="nav-item active"><a class="nav-link" href="/about_page/">About</a></li>
-						<li class="nav-item"><a class="nav-link" href="departments.html">Department</a></li>
-						<li class="nav-item submenu dropdown">
-							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-							 aria-expanded="false">Notice</a>
-							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-								<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-							</ul>
-						</li>
-						<li class="nav-item submenu dropdown">
-							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-							 aria-expanded="false">Contacts</a>
-							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
-								<li class="nav-item"><a class="nav-link" href="elements.html">Medical</a></li>
-							</ul>
-						</li>
-						</ul>
+    <ul class="nav navbar-nav menu_nav ml-auto">
+        <li class="nav-item "><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
+{#                            {% endif %}#}
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'online_advice' %}">Online Advice </a></li>
+        {% endif %}
+        <li class="nav-item"><a class="nav-link" href="https://www.du.ac.bd/">Dhaka University</a></li>
+        <li class="nav-item active"><a class="nav-link" href="{% url 'aboutPage' %}">About</a></li>
+{#                            {% if user.username == "ludwigprandtl" %}#}
+{#							<li class="nav-item"><a class="nav-link" href="{% url 'post_notice' %}">Post Notice</a></li>#}
+{#                            {% else %}#}
+        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+
+    </ul>
 {% endblock %}
 
 

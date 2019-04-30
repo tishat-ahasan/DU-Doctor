@@ -8,6 +8,7 @@ from django.contrib import messages
 from .models import AppointmentInfo
 
 import datetime
+from datetime import date
 
 
 # Create your views here.
@@ -91,7 +92,13 @@ def edit_appointment_view(request,pk=None):
     else:
         if not pk == None:
             object = AppointmentInfo.objects.get(pk=pk)
+            dob = object.date_of_birth
+            today = date.today()
+            age = today.year - dob.year
+            print (today.year)
+            print (dob.year)
             context={
-                'object':object
+                'object':object,
+                'age':age
             }
             return render(request,'MyProfile/edit_appointment_form.html',context)

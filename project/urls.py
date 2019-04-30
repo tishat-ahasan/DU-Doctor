@@ -45,6 +45,7 @@ urlpatterns = [
     url(r'^appointment_list/$', appointment_list_view, name='appointment_list'),
     url(r'^today_appointment/$', today_appointment_view, name='today_appointment'),
     url(r'^edit_appointment_with_pk/(?P<pk>\d+)/$', edit_appointment_view, name='edit_appointment_with_pk'),
+    url(r'^contacts/$', contact_view, name='contact'),
 ]
 
 if settings.DEBUG:

@@ -26,7 +26,7 @@ class UserProfileInfo(models.Model):
     admission_year = models.PositiveIntegerField(default=2010,null=True,blank=True)
     phone_number = models.CharField(max_length=20,null=True,blank=True)
     blood_group = models.CharField(max_length=10,null=True,blank=True)
-    date_of_birth = models.DateField(default=datetime.date.today,null=True,blank=True)
+    date_of_birth = models.DateField(default=datetime.date.today)
 
 def __str__(self):
     return self.user.username

@@ -1,0 +1,218 @@
+{% extends 'index.html' %}
+
+
+{% block active_blog %}
+    <ul class="nav navbar-nav menu_nav ml-auto">
+        <li class="nav-item "><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
+{#                            {% endif %}#}
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'online_advice' %}">Online Advice </a></li>
+        {% endif %}
+        <li class="nav-item"><a class="nav-link" href="https://www.du.ac.bd/">Dhaka University</a></li>
+        <li class="nav-item "><a class="nav-link" href="{% url 'aboutPage' %}">About</a></li>
+{#                            {% if user.username == "ludwigprandtl" %}#}
+{#							<li class="nav-item"><a class="nav-link" href="{% url 'post_notice' %}">Post Notice</a></li>#}
+{#                            {% else %}#}
+        <li class="nav-item active"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+
+    </ul>
+{% endblock %}
+
+{% block only_header %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+
+    <div>
+        <table style="border-collapse: collapse">
+
+            <tr>
+                <th align="center">Designation</th>
+                <th align="center">Name</th>
+                <th align="center">Contact No</th>
+
+            </tr>
+            <tr>
+                <td>Cheif Medical Officer </td>
+                <td>Dr.A K M Abdur Rahman </td>
+                <td>01199065631</td>
+
+            </tr>
+
+            <tr>
+                <td>Additional Chief Medical Officer</td>
+                <td>Dr.Sarwar Jahan Muttafi </td>
+                <td>01553300600</td>
+            </tr>
+
+            <tr>
+                <td>Additional Chief Medical Officer</td>
+                <td>Dr.Muhammad Said Ullah (L.P.R) </td>
+                <td>01911341513</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr.Borhan Uddin Molik </td>
+                <td>01198115440</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr.Hafeza Jaman </td>
+                <td>01715106840</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr.Md.Jalal Uddin Ahmed </td>
+                <td>0155238702</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr.Md Nurul Islam</td>
+                <td>01731914007</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr.Razia Rahman</td>
+                <td>01817516559</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr.Nur-Muhammad </td>
+                <td>01710562467</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr.Tanvir Ali</td>
+                <td>01772133301</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr.Md. Salah Uddin</td>
+                <td>01721935937</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr. A M Sazzad Hossain</td>
+                <td>01552470474</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr. Md Sharif Kamruddin</td>
+                <td>01712598031</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr. Arif Reza Sikder</td>
+                <td>01715008055</td>
+            </tr>
+
+            <tr>
+                <td>Senior Medical Officer</td>
+                <td>Dr. Ferdousi Purobi Chowdhury</td>
+                <td>01712160744</td>
+            </tr>
+
+            <tr>
+                <td>Medical Officer</td>
+                <td>Dr. Jamil Shahedi</td>
+                <td>01712749278</td>
+            </tr>
+
+            <tr>
+                <td>Medical Officer</td>
+                <td>Dr. Nargis Fatema (patholoy)</td>
+                <td>01713045169</td>
+            </tr>
+
+            <tr>
+                <td>Medical Officer</td>
+                <td>Dr. Rathindranath Sarkar</td>
+                <td>01716216189</td>
+            </tr>
+
+            <tr>
+                <td>Medical Officer</td>
+                <td>Dr. Syed Al Amin</td>
+                <td>01911364013</td>
+            </tr>
+
+            <tr>
+                <td>Medical Officer</td>
+                <td>Dr. Shamima Parvin </td>
+                <td>01818373258</td>
+            </tr>
+
+
+            <tr>
+                <td>Medical Officer</td>
+                <td>Dr. Mahbuba Akhter </td>
+                <td>01552433552</td>
+            </tr>
+
+            <tr>
+                <td>Medical Officer</td>
+                <td>Dr. Shariful Islam </td>
+                <td>01717786726</td>
+            </tr>
+
+            <tr>
+                <td>Assistant Medical Officer</td>
+                <td>Dr. Sumonto kundo </td>
+                <td>01720957759</td>
+            </tr>
+
+            <tr>
+                <td>Parttime Medical Officer</td>
+                <td>Dr. Captain M A Salam  </td>
+                <td>01720107177</td>
+            </tr>
+            <tr>
+                <td>Parttime Medical Officer</td>
+                <td>Dr. Monirul Islam (Radilogist)</td>
+                <td>01912999116</td>
+            </tr>
+
+            <tr>
+                <td>Parttime Medical Officer</td>
+                <td>Dr. Md Jakaria (ENT)</td>
+                <td>01716578378</td>
+            </tr>
+
+             <tr>
+                <td>Parttime Medical Officer</td>
+                <td>Dr. Md Sirajul Haque (Heart)</td>
+                <td>01819291182</td>
+            </tr>
+
+             <tr>
+                <td>Parttime Medical Officer</td>
+                <td>Dr. Rakhi Pal</td>
+                <td>01819810801</td>
+            </tr>
+
+            <tr>
+                <td>Parttime Medical Officer</td>
+                <td>Dr. Jesmin Ferdous (Ultrasonogram)</td>
+                <td>01552473314</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -47,9 +47,15 @@
 					<div class="col-lg-9 col-sm-8 col-8 header-top-right ">
 						<a href="tel:+8801798-762920"><span class="lnr lnr-phone-handset"></span> <span class="text"><span class="text"></span></span></a>
 						<a href="mailto:registrar@du.ac.bd"><span class="lnr lnr-envelope"></span> <span class="text"><span class="text">support</span></span></a>
-						<a href="{% url 'appointment' %}" >Appointment</a>
-                        {% if user.is_authenticated %}
+                        {% if user.is_superuser %}
+						<a href="{% url 'appointment_list' %}" >Appointment</a>
+                            {% elif user.is_authenticated %}
+                        <a href="{% url 'appointment' %}" >Appointment</a>
+                        {% endif %}
+                        {% if user.is_authenticated and not user.is_superuser%}
                             <a href="{% url 'my_profile' %}" > Profile </a>
+                        {% endif %}
+                            {% if user.is_authenticated %}
                             <a href="{% url 'logout' %}">Log Out</a>
                         {% else %}
 						<a href="{% url 'login_signup:register' %}">Create Account</a>
@@ -100,16 +106,17 @@
 						{% block active_blog %}
 						<ul class="nav navbar-nav menu_nav ml-auto">
 							<li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-							<li class="nav-item "><a class="nav-link" href="{% url 'aboutPage' %}">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="departments.html">Department</a></li>
-{#                            {% if user.username == "ludwigprandtl" %}#}
-{#							<li class="nav-item"><a class="nav-link" href="{% url 'post_notice' %}">Post Notice</a></li>#}
-{#                            {% else %}#}
-                             <li class="nav-item"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
+							<li class="nav-item"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
 {#                            {% endif %}#}
 							{% if user.is_authenticated %}
 							<li class="nav-item"><a class="nav-link" href="{% url 'online_advice' %}">Online Advice </a></li>
 							{% endif %}
+							<li class="nav-item"><a class="nav-link" href="https://www.du.ac.bd/">Dhaka University</a></li>
+                            <li class="nav-item "><a class="nav-link" href="{% url 'aboutPage' %}">About</a></li>
+{#                            {% if user.username == "ludwigprandtl" %}#}
+{#							<li class="nav-item"><a class="nav-link" href="{% url 'post_notice' %}">Post Notice</a></li>#}
+{#                            {% else %}#}
+
 						</ul>
 						{% endblock %}
 						<ul class="nav navbar-nav ml-auto">

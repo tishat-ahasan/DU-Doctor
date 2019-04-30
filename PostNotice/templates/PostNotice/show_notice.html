@@ -10,7 +10,7 @@
 {% block only_header %}
     <div class = "row">
     <div class="col-lg-3">
-        {% if user.username == "Doctor" %}
+        {% if user.is_superuser %}
 
         <a href="{% url 'post_notice' %}" class="btn btn-primary" role="button"> Create Post</a>
 

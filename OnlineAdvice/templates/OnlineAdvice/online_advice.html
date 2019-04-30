@@ -23,6 +23,10 @@
   </head>
 
   <style>
+      h6 {
+  color: black;
+}
+
     .center {
         /* this will keep the content center */
         position: absolute;
@@ -40,6 +44,7 @@
 
     .card {
         padding: 10px 0 10px 0;
+        color: black;
     }
 
     .input-group {
@@ -54,6 +59,7 @@
   </style>
 
   <body>
+  <div class="row">
 
     <div class="col-lg-6 header-area-left">
 
@@ -96,7 +102,7 @@
 <!--    <div class = "col-lg-3 header-top-right">-->
 <!--        <a class="btn btn-primary" href="{% url 'new_message' %}" role = "button" > Create Post </a>-->
 
-
+     <div class="col-lg-6 header-area-right">
 
     <form method="post" action="{% url 'new_message' %}" style="margin-left:15px">
             {% csrf_token %}
@@ -104,6 +110,10 @@
             <span></span>
                 <button class="btn btn-primary" type="submit">send</button>
        </form>
+
+     </div>
+
+  </div>
 
     <br>
     <br>

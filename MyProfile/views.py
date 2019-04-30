@@ -77,3 +77,21 @@ def today_appointment_view(request, *args,** kwargs):
     list2 = AppointmentInfo.objects.filter(appointment_date=today_date)
     i = 'no'
     return render(request, 'MyProfile/appointment_list.html', {'list': list2, 'i': i})
+
+def edit_appointment_view(request,pk=None):
+    print(pk)
+    if request.method=="POST":
+        object = AppointmentInfo.objects.get(pk=pk)
+        object.disease_description = request.POST['disease_description']
+        object.test_result = request.POST['test_result']
+        object.medicine = request.POST['medicine']
+        object.instructions = request.POST['instructions']
+        object.save()
+        return HttpResponseRedirect(reverse('appointment_list'))
+    else:
+        if not pk == None:
+            object = AppointmentInfo.objects.get(pk=pk)
+            context={
+                'object':object
+            }
+            return render(request,'MyProfile/edit_appointment_form.html',context)

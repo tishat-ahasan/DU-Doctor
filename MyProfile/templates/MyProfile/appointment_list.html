@@ -60,7 +60,7 @@ td {
 
 {% for item in list %}
     <tr> <td>
-    <div>
+    <div >
         <table style="border-collapse: collapse">
 
             <colgroup>
@@ -74,6 +74,7 @@ td {
                 <th scope="col">Test</th>
                 <th scope="col">Instruction</th>
                 <th scope="col">Medicine</th>
+                <th scope="col"><a href="{% url 'edit_appointment_with_pk' pk=item.id %}" class="btn ">Edit</a> </th>
             </tr>
             <tr>
                 <td>{{item.username}} <br> {{item.registration_number}}</td>
@@ -81,10 +82,12 @@ td {
                 <td>{{item.test_result}}</td>
                 <td>{{item.instructions}}</td>
                 <td>{{item.medicine}}</td>
+                <td></td>
             </tr>
         </table>
     </div>
     </tr> </td>
+    </div>
 {% endfor %}
 </table>
 </body>

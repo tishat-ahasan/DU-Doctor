@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--{% load staticfiles %}-->
+{% load crispy_forms_tags %}
+
+
+{% block only_header %}
+    <div class = "row">
+    <div class="col-lg-3">
+        {% if user.username == "Doctor" %}
+
+        <a href="{% url 'post_notice' %}" class="btn btn-primary" role="button"> Create Post</a>
+
+        {% endif %}
+
+     </div>
+
+    <div class="col-lg-9">
+
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <h2><a class="article-title" >{{ post.title }}</a></h2>
+              <br>
+            <p class="article-content">{{ post.description }}</p>
+              <br>
+          </div>
+        </article>
+{% endfor %}
+
+    </div>
+
+    </div>
+
+{% endblock %}
+
+

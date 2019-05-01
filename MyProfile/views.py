@@ -110,3 +110,10 @@ def profile_view(request,*args,**kwargs):
         'obj': u
     }
     return render(request, 'MyProfile/profile.html', contex)
+
+
+def user_appointment_view(request, *args,** kwargs):
+    current_user = request.user.username
+    list2 = AppointmentInfo.objects.filter(username=current_user)
+    i = 'noo'
+    return render(request, 'MyProfile/appointment_list.html', {'list': list2, 'i': i})

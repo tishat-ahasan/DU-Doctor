@@ -48,10 +48,17 @@ td {
     <td><h2 align="left"> Appointment list: </h2> </td>
     <td> <h2 align="right">  <a href="{% url 'today_appointment' %}"/> Today's Appointment</h2> </td>
 </table>
-{% else %}
+{% endif %}
+
+{% if i == 'no' %}
 <table>
     <td><h2 align="left">Today's Appointment list: </h2> </td>
+</table>
+{% endif %}
 
+{% if i == 'noo' %}
+<table>
+    <td><h2 align="left">Appointment list: </h2> </td>
 </table>
 {% endif %}
 
@@ -74,7 +81,8 @@ td {
                 <th scope="col">Test</th>
                 <th scope="col">Instruction</th>
                 <th scope="col">Medicine</th>
-                <th scope="col"><a href="{% url 'edit_appointment_with_pk' pk=item.id %}" class="btn ">Edit</a> </th>
+                <th> </th>
+
             </tr>
             <tr>
                 <td>{{item.username}} <br> {{item.registration_number}}</td>
@@ -82,7 +90,11 @@ td {
                 <td>{{item.test_result}}</td>
                 <td>{{item.instructions}}</td>
                 <td>{{item.medicine}}</td>
-                <td></td>
+                {% if i == 'noo' %}
+                <td> </td>
+                {% else %}
+                <td align="right"><a href="{% url 'edit_appointment_with_pk' pk=item.id %}">Edit</a> </td>
+                {% endif %}
             </tr>
         </table>
     </div>

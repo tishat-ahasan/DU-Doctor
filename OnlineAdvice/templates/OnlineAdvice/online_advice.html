@@ -85,7 +85,18 @@
   <body>
   <br>
   <div class="row">
-      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+           <form method="post" action="{% url 'new_message' %}" style="margin-left:15px">
+            {% csrf_token %}
+            <textarea id="input-box" rows ="5" cols="40" placeholder="Say something..." name="content" align = "left"></textarea>
+               <div class="row">
+                   <div class="col-lg-8"></div>
+                   <div class="col-lg-2">
+            <span></span><button class="btn btn-primary" type="submit" >send</button>
+                   </div>
+               </div>
+        </form>
+      </div>
     <div class="col-lg-4">
         {% for message in messages %}
 
@@ -108,15 +119,14 @@
         <br>
         {% endfor %}
         </div>
-  </div>
-  <div class="row">
-      <div class="col-lg-4"> </div>
-      <div class="col-lg-4">
-        <form method="post" action="{% url 'new_message' %}" style="margin-left:15px">
-            {% csrf_token %}
-            <textarea id="input-box" rows ="5" cols="40" placeholder="Say something..." name="content" align = "left"></textarea>
-            <span></span><button class="btn btn-primary" type="submit">send</button>
-        </form>
+{#  </div>#}
+{#  <div class="row">#}
+   <div class="col-lg-4">
+{#        <form method="post" action="{% url 'new_message' %}" style="margin-left:15px">#}
+{#            {% csrf_token %}#}
+{#            <textarea id="input-box" rows ="5" cols="40" placeholder="Say something..." name="content" align = "left"></textarea>#}
+{#            <span></span><button class="btn btn-primary" type="submit">send</button>#}
+{#        </form>#}
       </div>
   </div>
     <br>
@@ -214,7 +224,7 @@
 
 
 
-</style>
+{#</style>#}
 </html>
 
 {% endblock %}

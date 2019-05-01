@@ -19,7 +19,7 @@ class UserProfileInfo(models.Model):
 
     # profile_pic = models.ImageField(upload_to='profile_pics',blank=True)
 
-    gender = models.CharField(max_length=20, choices=gender_choices,null=True,blank=True)
+    gender = models.CharField(max_length=20, choices=gender_choices)
     registration_number = models.CharField(max_length=70, default='2016-814-413')
     hall_name = models.CharField(max_length=100, default='Dr. muhammad sahidullah hall',null=True,blank=True)
     department_name = models.CharField(max_length=100,null=True,blank=True)

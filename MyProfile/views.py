@@ -68,7 +68,7 @@ def appointmet_view(request,*args,**kwargs):
         return render(request,'MyProfile/appointment.html')
 
 def appointment_list_view(request,*args,**kwargs):
-    list = AppointmentInfo.objects.order_by('appointment_date')
+    list = AppointmentInfo.objects.order_by('-appointment_date')
     today_date = datetime.date.today()
     i='yes'
     return render(request,'MyProfile/appointment_list.html',{'list':list,'i':i})

@@ -48,10 +48,21 @@
                         {% if user.is_superuser %}
 						<a href="{% url 'appointment_list' %}" >Appointment</a>
                             {% elif user.is_authenticated %}
-                        <a href="{% url 'appointment' %}" >Appointment</a>
+<!--                        <a href="{% url 'appointment' %}" >Appointment</a>-->
+						<a href="#ex1" rel="modal:open">Appointment</a>
+						<form method="post" action="{% url 'appointment' %}" class="login_form modal" id="ex1" style="display:none;">
+  							{% csrf_token %}
+							<h2> Fill the form</h2>
+							<p> <input name="date" placeholder="Appointment Date (yyyy-mm-dd)" type="text" style="height:50px; width:400px" required> </p>
+							<p> <input name="phone_no" placeholder="Your Phone Number" type="text" style="height:50px; width:400px" tabindex="2" > </p>
+							<p> <textarea name="description" placeholder="Short Description of disease...." style="height:100px; width:400px" tabindex="3" ></textarea>
+								<button class="btn btn-primary" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+							</p>
+						</form>
+<!--						...................................-->
                         {% endif %}
                         {% if user.is_authenticated and not user.is_superuser%}
-                            <a href="{% url 'my_profile' %}" > Profile </a>
+                            <a href="{% url 'profile' %}" > Profile </a>
                         {% endif %}
                             {% if user.is_authenticated %}
                             <a href="{% url 'logout' %}">Log Out</a>
@@ -506,12 +517,22 @@
       margin: 0;
       padding: 10px;
       color: #fff;
-      font-size: 14px;
+      font-size: 12px;
       background: #911C8D;
       background: #911C8D;
     }
 
-    .login_form.modal p { padding: 20px 30px; border-bottom: 1px solid #ddd; margin: 0;
+       .login_form h2 {
+      margin: 0;
+      padding: 5px;
+      color: black;
+      font-size: 10px;
+      background: #911C8D;
+      background: #911C8D;
+    }
+
+
+    .login_form.modal p { padding: 10px 15px; border-bottom: 1px solid #ddd; margin: 0;
       background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #eee),color-stop(1, #fff));
       overflow: hidden;
     }

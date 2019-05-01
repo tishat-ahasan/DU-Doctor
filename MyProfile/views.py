@@ -102,3 +102,11 @@ def edit_appointment_view(request,pk=None):
                 'age':age
             }
             return render(request,'MyProfile/edit_appointment_form.html',context)
+
+def profile_view(request,*args,**kwargs):
+    current_user = request.user.username
+    u = User.objects.get(username=current_user)
+    contex = {
+        'obj': u
+    }
+    return render(request, 'MyProfile/profile.html', contex)

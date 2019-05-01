@@ -12,7 +12,7 @@
 
 .container {
 
-  margin: 0 auto;
+  margin: 2px auto;
   position: static;
 }
 
@@ -21,23 +21,10 @@
 #contact {
   background: #F9F9F9;
   padding: 25px;
-  margin: 50px 0;
+  margin-bottom: 50px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-#contact h3 {
-  display: block;
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 10px;
-}
-
-#contact h4 {
-  margin: 5px 0 15px;
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-}
 
 fieldset {
   border: medium none !important;
@@ -130,19 +117,28 @@ fieldset {
 </head>
 <body>
 
-    <div class="container">
-          <form id="contact" action="" method="post">
-              {% csrf_token %}
-
-            <fieldset>
-                <input name="date" placeholder="Appointment Date (yyyy-mm-dd)" type="text" tabindex="1" required> </fieldset>
-            <fieldset>
-                <input name="phone_no" placeholder="Your Phone Number" type="text" tabindex="2" > </fieldset>
-            <fieldset>
-                <textarea name="description" placeholder="Short Description of disease...." tabindex="3" ></textarea> </fieldset>
-            <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button> </fieldset>
-          </form>
+    <style>
+	 .header-shadow{
+        background: -webkit-linear-gradient(90deg, #772dff 0%, #9e4fff 100%);
+        background: -moz-linear-gradient(90deg, #772dff 0%, #9e4fff 100%);
+        background: -ms-linear-gradient(90deg, #772dff 0%, #9e4fff 100%);
+        background: -o-linear-gradient(90deg, #772dff 0%, #9e4fff 100%);
+        background: linear-gradient(90deg, #772dff 0%, #9e4fff 100%); }
+    </style>
+    <div class="header-shadow">
+        <div class="container">
+              <form id="contact" action="" method="post">
+                  {% csrf_token %}
+                <fieldset>
+                    <input name="date" placeholder="Appointment Date (yyyy-mm-dd)" type="text" tabindex="1" required> </fieldset>
+                <fieldset>
+                    <input name="phone_no" placeholder="Your Phone Number" type="text" tabindex="2" > </fieldset>
+                <fieldset>
+                    <textarea name="description" placeholder="Short Description of disease...." tabindex="3" ></textarea> </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button> </fieldset>
+              </form>
+        </div>
     </div>
 
 </body>

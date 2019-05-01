@@ -25,24 +25,25 @@
 {% endblock %}
 
 {% block only_header %}
-    <div class = "row">
-    <div class="col-lg-3">
-        {% if user.is_superuser %}
-
+    {% if user.is_superuser %}
         <a href="{% url 'post_notice' %}" class="btn btn-primary" role="button"> Create Post</a>
-
         {% endif %}
-
+    <div class="header-shadow">
+        <br>
+    <div class = "row" style="margin:2px">
+    <div class="col-lg-2">
+        <img src="{% static 'img/notice1.jpg' %}" height="150px"> <br> <br> <br> <br> <br>
+        <img src="{% static 'img/notice2.jpg' %}" height="150px">
      </div>
 
-    <div class="col-lg-9">
+    <div class="col-lg-10">
 
     {% for post in posts %}
         <article class="media content-section">
           <div class="media-body">
             <h2><a class="article-title" >{{ post.title }}</a></h2>
               <br>
-            <p class="article-content">{{ post.description }}</p>
+            <p style="color:black">{{ post.description }}</p>
               <br>
           </div>
         </article>
@@ -51,6 +52,19 @@
     </div>
 
     </div>
+</div>
+<style>
+
+.header-shadow{
+background: -webkit-linear-gradient(90deg, #0ba9ff 0%, #56d9ff 100%);
+
+  background: -ms-linear-gradient(90deg, #0ba9ff 0%, #56d9ff 100%);
+  background: -o-linear-gradient(90deg, #0ba9ff 0%, #56d9ff 100%);
+  background: linear-gradient(90deg, #0ba9ff 0%, #56d9ff 100%);
+  }
+
+
+</style>
 
 {% endblock %}
 

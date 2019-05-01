@@ -1,0 +1,108 @@
+{% extends 'index.html' %}
+
+{% block only_header %}
+<head>
+
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+
+                <div class="w3-center" style="left-margin:400px">
+                    <div>
+                    <h1 >Profile</h1>
+
+                        <p>
+                            <a href="{% url 'my_profile' %}"> <i class="fa fa-pencil"> </i> </a>
+                            <a href="{% url 'home' %}"> <i class="fa fa-history"> </i> </a>
+                        </p>
+
+                    </div>
+                </div>
+
+
+
+
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half w3-margin-bottom">
+                    <ul class="w3-ul w3-white w3-center">
+                        <!-- <li class="w3-black w3-xlarge w3-padding-32">Basic</li> -->
+
+                        <li class="w3-padding-16">
+                            <p><i class="fa fa-user-circle fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ obj.username }} </p>
+                        </li>
+
+                        <li class="w3-padding-16 ">
+                            <p><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-large w3-text-teal"></i>University of Dhaka </p>
+                        </li>
+
+                        <li class="w3-padding-16 ">
+                            <p><i class="fa fa-calendar-o fa-fw w3-margin-right w3-large w3-text-teal"></i>Addmission year : {{ obj.userprofileinfo.admission_year }} </p>
+                        </li>
+
+                        <li class="w3-padding-16 ">
+                            <p><i class="fa fa-h-square w3-margin-right w3-large w3-text-teal"></i>{{obj.userprofileinfo.hall_name }} </p>
+                        </li>
+
+                        <li class="w3-padding-16 ">
+                            <p><i class="fa fa-phone w3-margin-right w3-large w3-text-teal"></i> {{ obj.userprofileinfo.phone_number }} </p>
+                        </li>
+
+                        <li class="w3-padding-16 ">
+                            <p><i class="fa fa-birthday-cake w3-margin-right w3-large w3-text-teal"></i> {{ obj.userprofileinfo.date_of_birth }} </p>
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
+
+                <div class="w3-half">
+                    <ul class="w3-ul w3-white w3-center">
+                        <!-- <li class="w3-black w3-xlarge w3-padding-32">Activity</li> -->
+
+                        <li class="w3-padding-16">
+                            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Student</p>
+                        </li>
+
+                        <li class="w3-padding-16">
+                            <p><i class="fa fa-venus fa-fw w3-margin-right w3-large w3-text-teal"></i> {{ obj.userprofileinfo.gender}}</p>
+                        </li>
+
+                        <li class="w3-padding-16 ">
+                            <p><i class="fa fa-id-card-o w3-margin-right w3-large w3-text-teal"></i>{{ obj.userprofileinfo.registration_number }} </p>
+                        </li>
+
+                         <li class="w3-padding-16 ">
+                            <p><i class="fa fa-university w3-margin-right w3-large w3-text-teal"></i>{{ obj.userprofileinfo.department_name }} </p>
+                        </li>
+
+                        <li class="w3-padding-16">
+                            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ obj.email }}</p>
+                        </li>
+
+                        <li class="w3-padding-16">
+                            <p><i class="fa fa-medkit fa-fw w3-margin-right w3-large w3-text-teal"></i> {{ obj.userprofileinfo.blood_group }}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+
+
+</body>
+
+</head>
+
+{% endblock %}

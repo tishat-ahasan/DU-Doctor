@@ -37,6 +37,7 @@ urlpatterns = [
     url(r'^login_signup/',include('login_signup.urls')),
     url(r'^logout/$', login_signup_view.user_logout, name='logout'),
     url(r'^my_profile/$',profileShowing,name='my_profile'),
+    url(r'^profile/$',profile_view,name='profile'),
     url(r'^online_advice/$', MessageListView.as_view(), name='online_advice'),
     url(r'^new_message/$', MessageCreateView.as_view(), name='new_message'),
     url(r'^show_notice/$', showNotice.as_view(), name='show_notice'),

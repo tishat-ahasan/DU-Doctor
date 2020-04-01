@@ -4377,7 +4377,7 @@ input[type=submit].btn-block {
         flex-direction: row
     }
     .navbar-expand-lg .navbar-nav .dropdown-menu {
-        position: absolute
+        position: relative
     }
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: .5rem;

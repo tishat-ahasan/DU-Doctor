@@ -1,5 +1,5 @@
 # login_signup/views.py
-
+from django.contrib import messages
 from django.shortcuts import render
 from login_signup.forms import UserForm,UserProfileInfoForm
 from django.contrib.auth import authenticate, login, logout
@@ -67,12 +67,13 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request,user)
-                return HttpResponseRedirect(reverse('second'))
+                messages.success(request, 'Login Successful!')
+                return HttpResponseRedirect(reverse('home'))
             else:
-                return HttpResponse("Your account was inactive.")
+                messages.success(request, 'Your account was inactive.')
+                return HttpResponseRedirect(reverse('home'))
         else:
-            print("Someone tried to login and failed.")
-            print("They used username: {} and password: {}".format(username,password))
-            return HttpResponse("Invalid login details given")
+            messages.success(request, 'Invalid Username or Password')
+            return HttpResponseRedirect(reverse('home'))
     else:
         return render(request, 'login_signup/login.html', {})

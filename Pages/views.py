@@ -4,7 +4,7 @@ from django.http import HttpResponse
 def home_view(request,*args , **kwargs):
     print(request.user)
     #return HttpResponse("<h1> hello world! </h1>")
-    return render(request,'home.html',{})
+    return render(request,'index.html',{})
 
 def second_view(request,*args , **kwargs):
     print(request.user)
@@ -13,6 +13,7 @@ def second_view(request,*args , **kwargs):
         "my_list"   : [10,20,30,40]
     }
     return render(request,'index.html',contex)
+
 
 def next_page(request):
     context = {}
@@ -23,3 +24,7 @@ def about_page(request):
     context = {}
 
     return render(request, 'about.html', context)
+
+def contact_view(request):
+    context = {}
+    return render(request, 'contacts.html', context)

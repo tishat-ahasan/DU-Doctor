@@ -113,6 +113,19 @@ button:focus {
 .lite_bg {
   background: #f9f9f9; }
 
+/* Nijer add kora gula
+============================================================================================ */
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+
+
 /* Main Title Area css
 ============================================================================================ */
 .main_title {
@@ -168,13 +181,13 @@ button:focus {
   background: -o-linear-gradient(to right, #0ba9ff 0%, #56d9ff 51%, #0ba9ff 100%);
   background: linear-gradient(to right, #0ba9ff 0%, #56d9ff 51%, #0ba9ff 100%);
   background-size: 200% auto;
-  padding: 0px 38px;
+  padding: 0px 0px;
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 300px;
   line-height: 50px;
-  border-radius: 50px;
+  border-radius: 150px;
   outline: none !important;
   box-shadow: 0px 0px 15px rgba(108, 39, 255, 0.3);
   text-align: center;
@@ -220,7 +233,7 @@ button:focus {
     .header_area .navbar .nav .nav-item {
       margin-right: 45px; }
       .header_area .navbar .nav .nav-item .nav-link {
-        font: 500 12px/80px "Roboto", sans-serif;
+        font: 500 12px/20px "Roboto", sans-serif;
         text-transform: uppercase;
         color: #222222;
         padding: 0px;
@@ -276,9 +289,9 @@ button:focus {
             margin-left: 0px;
             transition: all 0.4s linear; }
             .header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
-              line-height: 45px;
+              line-height: 15px;
               color: #222222;
-              padding: 0px 30px;
+              padding: 0px 3px;
               transition: all 150ms linear;
               display: block;
               margin-right: 0px; }
@@ -293,7 +306,7 @@ button:focus {
             opacity: 1;
             top: 100%; } }
         .header_area .navbar .nav .nav-item.submenu:hover ul .nav-item {
-          margin-top: 0px; }
+          margin-top: 2px; }
       .header_area .navbar .nav .nav-item:last-child {
         margin-right: 0px; }
     .header_area .navbar .search {
@@ -324,7 +337,7 @@ button:focus {
     transition: all 0.3s ease 0s;
     box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1); }
     .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
-      line-height: 70px; }
+      line-height: 10px; }
 
 #search_input_box {
   text-align: center;
@@ -400,7 +413,7 @@ button:focus {
   .header-top .header-top-right {
     text-align: right; }
     .header-top .header-top-right a {
-      margin-right: 40px; }
+      margin-right: 20px; }
       .header-top .header-top-right a:last-child {
         margin-right: 0; }
       .header-top .header-top-right a .lnr {
@@ -412,14 +425,13 @@ button:focus {
         display: none; } }
   .header-top .primary-btn {
     border-radius: 0px; }
-
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /* Home Banner Area css
 ============================================================================================ */
 .home_banner_area {
   z-index: 1;
-  min-height: 900px;
+  min-height: 600px;
   display: flex;
   background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;
   background-size: cover; }
@@ -2676,7 +2688,7 @@ h6 {
   /* Home Banner Area css
   ============================================================================================ */
   .home_banner_area .banner_inner {
-    padding: 100px 0px; }
+    padding: 20px 2px; }
 
   /* End Home Banner Area css
   ============================================================================================ */
@@ -2690,8 +2702,8 @@ h6 {
     border-radius: 0px;
     padding: 0px;
     cursor: pointer;
-    margin-top: 27px;
-    margin-bottom: 23px; }
+    margin-top: 10px;
+    margin-bottom: 10px; }
 
   .header_area {
     position: absolute; }
@@ -2712,7 +2724,7 @@ h6 {
 
   .navbar-toggler[aria-expanded="true"] span:last-child {
     transform: rotate(45deg);
-    bottom: 6px;
+    bottom: 2px;
     position: relative; }
 
   .navbar-toggler span {
@@ -2739,7 +2751,7 @@ h6 {
     padding: 0px; }
 
   .header_area .navbar .nav .nav-item .nav-link {
-    line-height: 40px;
+    line-height: 20px;
     margin-right: 0px;
     display: block;
     border-bottom: 1px solid #ededed33;
@@ -2762,10 +2774,10 @@ h6 {
     margin-top: 0; }
 
   .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
-    line-height: 40px; }
+    line-height: 20px; }
 
   	/* End Main Menu Area css
-  
+
   	============================================================================================ */
   /* Blog page Area css
   ============================================================================================ */

@@ -16,24 +16,39 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url,include
+from django.conf import settings
+from django.conf.urls.static import static
+
+from MyProfile.views import profileShowing
 from login_signup import views as login_signup_view
-from MyProfile import views as MyProfile_view
+from MyProfile.views import *
 from Pages.views import *
-from Product.views import (
-    product_create_view,
-    )
-from Blog.views import article_detail_view
+from OnlineAdvice.views import *
+from PostNotice.views import *
 
 urlpatterns = [
-    path('product/', include('Product.urls')),
+
     path('', home_view, name='home'),
     path('second/', second_view, name='second'),
+    path('xyz/', profileShowing, name='profile'),
     path('next_page/', next_page , name='nextPage'),
     path('about_page/', about_page , name='aboutPage'),
-    path('create/', product_create_view, name='details'),
-    path('article/', article_detail_view, name='article_detail'),
     path('admin/', admin.site.urls),
     url(r'^login_signup/',include('login_signup.urls')),
     url(r'^logout/$', login_signup_view.user_logout, name='logout'),
-    url(r'^my_profile/$',MyProfile_view.profileShowing,name='my_profile')
+    url(r'^my_profile/$',profileShowing,name='my_profile'),
+    url(r'^profile/$',profile_view,name='profile'),
+    url(r'^online_advice/$', MessageListView.as_view(), name='online_advice'),
+    url(r'^new_message/$', MessageCreateView.as_view(), name='new_message'),
+    url(r'^show_notice/$', showNotice.as_view(), name='show_notice'),
+    url(r'^post_notice/$', postNotice.as_view(), name='post_notice'),
+    url(r'^appointment/$', appointmet_view, name='appointment'),
+    url(r'^appointment_list/$', appointment_list_view, name='appointment_list'),
+    url(r'^today_appointment/$', today_appointment_view, name='today_appointment'),
+    url(r'^user_appointment/$', user_appointment_view, name='user_appointment'),
+    url(r'^edit_appointment_with_pk/(?P<pk>\d+)/$', edit_appointment_view, name='edit_appointment_with_pk'),
+    url(r'^contacts/$', contact_view, name='contact'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

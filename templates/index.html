@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-{% load staticfiles %}
+{% load static %}
 
 <head>
 	<!-- Required meta tags -->
@@ -20,6 +20,15 @@
 	<link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
 	<!-- main css -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!--	for modal-->
+	<!-- Remember to include jQuery :) -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+	<!-- jQuery Modal -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 </head>
 
 <body>
@@ -35,35 +44,57 @@
 
 						</select>
 					</div>
-					<div class="col-lg-9 col-sm-6 col-8 header-top-left ">
-						<a href="tel:+8801798-762920"><span class="lnr lnr-phone-handset"></span> <span class="text"><span class="text">01798-762920</span></span></a>
-						<a href="mailto:registrar@du.ac.bd"><span class="lnr lnr-envelope"></span> <span class="text"><span class="text">support@medicalcenter.du.ac.bd</span></span></a>
-						<a href="#" class="primary-btn text-uppercase">Appointment</a>
-                        {% if user.is_authenticated %}
-                            <a href="{% url 'my_profile' %}" class="primary-btn text-uppercase nav-link">My Profile</a>
-                            <a href="{% url 'logout' %}" class="primary-btn text-uppercase nav-link">Sign Out</a>
-                        {% else %}
-						<a href="{% url 'login_signup:register' %}" class="primary-btn text-uppercase nav-link">Create Account</a>
-						<a href="{% url 'login_signup:user_login' %}" class="primary-btn text-uppercase">Sign In</a>
+					<div class="col-lg-9 col-sm-8 col-8 header-top-right ">
+                        {% if user.is_superuser %}
+						<a href="{% url 'appointment_list' %}" >Appointment</a>
+                        {% elif user.is_authenticated %}
+						<a href="#ex1" rel="modal:open">Appointment</a>
+						<form method="post" action="{% url 'appointment' %}" class="login_form modal" id="ex1" style="display:none;">
+  							{% csrf_token %}
+							<h2> Fill the form</h2>
+							<p> <input name="date" placeholder="Appointment Date (yyyy-mm-dd)" type="text" style="height:50px; width:400px" required> </p>
+							<p> <input name="phone_no" placeholder="Your Phone Number" type="text" style="height:50px; width:400px" tabindex="2" > </p>
+							<p> <textarea name="description" placeholder="Short Description of disease...." style="height:100px; width:400px" tabindex="3" ></textarea>
+								<button class="btn btn-primary" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+							</p>
+						</form>
                         {% endif %}
+                        {% if user.is_authenticated and not user.is_superuser%}
+                            <a href="{% url 'profile' %}" > Profile </a>
+                        {% endif %}
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'logout' %}">Log Out</a>
+                        {% else %}
+						<a href="{% url 'login_signup:register' %}">Create Account</a>
+<!--						<a href="{% url 'login_signup:user_login' %}">Login</a>-->
+
+						<a href="#ex2" rel="modal:open">Login</a>
+						<form method="post" action="{% url 'login_signup:user_login' %}" class="login_form modal" id="ex2" style="display:none;">
+  							{% csrf_token %}
+							<h3>Please login to continue</h3>
+							<p><label>Username:</label>
+							<input type="text"  name="username" placeholder="Username"/></p>
+							<p><label>Password:</label>
+							<input type="password" name="password" placeholder="Password"/></p>
+							<p><input class="btn btn-primary" type="submit" value="Login" /> or
+								<a class="btn btn-primary" href="#"> sign up</a>
+								<br> <br> <br>
+								forgot password?click here
+							</p>
+						</form>
+                        {% endif %}
+
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="main_menu">
-			<div class="search_input" id="search_input_box">
-				<div class="container">
-					<form class="d-flex justify-content-between">
-						<input type="text" class="form-control" id="search_input" placeholder="Search Here">
-						<button type="submit" class="btn"></button>
-						<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-					</form>
-				</div>
+		<div>
+
 			</div>
-			<nav class="navbar navbar-expand-lg navbar-light">
+			<nav class="navbar navbar-expand-lg ">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="{% static 'img/favicon.png' %}" alt=""></a>
+					<a class="navbar-brand logo_h" href="{% url 'home' %}"><img src="{% static 'img/favi_con.png' %}" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -71,43 +102,49 @@
 						<span class="icon-bar"></span>
 					</button>
 					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+					<div id="navbarSupportedContent">
 						{% block active_blog %}
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item "><a class="nav-link" href="/about_page/">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="departments.html">Department</a></li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
-									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
+{#                            {% endif %}#}
+							{% if user.is_authenticated %}
+							<li class="nav-item"><a class="nav-link" href="{% url 'online_advice' %}">Online Advice </a></li>
+							{% endif %}
+							<li class="nav-item"><a class="nav-link" href="https://www.du.ac.bd/">Dhaka University</a></li>
+                            <li class="nav-item "><a class="nav-link" href="{% url 'aboutPage' %}">About</a></li>
+{#                            {% if user.username == "ludwigprandtl" %}#}
+{#							<li class="nav-item"><a class="nav-link" href="{% url 'post_notice' %}">Post Notice</a></li>#}
+{#                            {% else %}#}
+							<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+
 						</ul>
 						{% endblock %}
-						<ul class="nav navbar-nav ml-auto">
-							<li class="nav-item"><a href="#" class="search">
-									<i class="lnr lnr-magnifier" id="search"></i></a>
-							</li>
-						</ul>
+
 					</div>
+
 				</div>
 			</nav>
 		</div>
 	</header>
 	<!--================ End Header Menu Area =================-->
 
+
+	{% block only_header %}
+
+	<div class="form-group">
+        {% if messages  %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>
+                    <div class="alert alert-success" style="text:green">{{message}}</div>
+                </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+	{% block homebanner %}
 	<!--================ Start Home Banner Area =================-->
 	<section class="home_banner_area">
 		<div class="banner_inner">
@@ -121,12 +158,12 @@
 					<p>
 						The Centre provides service round the clock, seven days a week, with 30 doctors working in different shifts.
 					</p>
-					<a class="primary-btn text-uppercase" href="/next_page/">Learn More</a>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!--================ End Home Banner Area =================-->
+	{% endblock %}
 
 	{% block feature_area %}
 
@@ -159,7 +196,7 @@
 						<div class="feature_content">
 							<p>30 doctors working in different shifts with 13 senior medical officers,7 Medical Officers,6 doctors in HOMEO Unit.</p>
 							<div class="feature_btn">
-								<a href="#" class="f_btn">Learn More</a>
+
 							</div>
 						</div>
 					</div>
@@ -175,7 +212,11 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 								dolore magna aliqua. Ut enim ad minim veniam.</p>
 							<div class="feature_btn">
-								<a href="#" class="f_btn">Get Appointment</a>
+								{% if user.is_superuser %}
+
+                            	{% elif user.is_authenticated %}
+                        		<a href="{% url 'appointment' %}" class="f_btn">Get Appointment</a>
+                        		{% endif %}
 							</div>
 						</div>
 					</div>
@@ -194,7 +235,7 @@
 			<div class="row align-items-center">
 				<div class="col-lg-5 col-md-5">
 					<div class="about_details lite_bg">
-						<h2>Welcome to Medicare Center</h2>
+						<h2>Welcome to DU Medical Center</h2>
 						<p>24/7 free medical service and free pathological examinations to students, teachers and staffs of the University and also family members of the teachers and staffs. </p>
 
 					</div>
@@ -203,12 +244,13 @@
 					<div class="about_right overlay">
 						<div class="about_inner">
 							<h4>Doctors Time table</h4>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
+							<p>Saturday  -- 10.00 AM to 02.00 PM</p>
+							<p>Sunday    -- 08.00 AM to 05.00 PM</p>
+							<p>Monday    -- 08.00 AM to 05.00 PM</p>
+							<p>Tuesday   -- 08.00 AM to 05.00 PM</p>
+							<p>Wednesday -- 08.00 AM to 05.00 PM</p>
+							<p>Thursday  -- 08.00 AM to 02.00 PM </p>
+							<p>Friday  -- 08.00 AM to 02.00 PM </p>
 						</div>
 
 					</div>
@@ -242,27 +284,6 @@
 								<div class="row align-items-center">
 									<div class="col-lg-4 col-md-3">
 										<div class="blog_thumb">
-											<img class="img-fluid" src="{% static 'img/recent-blog/blog1.jpg' %}" alt="">
-										</div>
-									</div>
-									<div class="col-lg-8 col-md-8">
-										<div class="blog_details">
-
-											<h4>
-												<a href="#">Portable Fashion for women</a>
-											</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- single-blog -->
-						<div class="col-lg-12 col-sm-12">
-							<div class="single_blog">
-								<div class="row align-items-center">
-									<div class="col-lg-4 col-md-3">
-										<div class="blog_thumb">
 											<img class="img-fluid" src="{% static 'img/recent-blog/blog2.jpg' %}" alt="">
 										</div>
 									</div>
@@ -270,15 +291,21 @@
 										<div class="blog_details">
 
 											<h4>
-												<a href="#">Portable Fashion for women</a>
+												<a href="https://www.daily-sun.com/post/342222/2018/10/10/Dhaka-University-observes-World-Mental-Health-Day">Dhaka University observes World Mental Health Day</a>
 											</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+											<p>
+												The World Mental Health Day 2018 was observed on Dhaka University (DU) campus
+												through different programmes including discussions on Wednesday.
+												This year's theme of the day is ‘Young people and mental health in a changing world’.
+												Marking the day, DU Educational and Counseling Psychology (ECP) department
+												and Students Counseling and Guidance Service Office jointly set up a stall in front
+												of Teacher-Student Center (TSC) to provide free mental services to the people.
+											</p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<!-- single-blog -->
 						<div class="col-lg-12 col-sm-12">
 							<div class="single_blog">
 								<div class="row align-items-center">
@@ -293,9 +320,15 @@
 
 											</div>
 											<h4>
-												<a href="#">Portable Fashion for women</a>
+												<a href="http://www.theindependentbd.com/printversion/details/192412">World Oral Health Day</a>
 											</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+											<p>
+												Bangladesh Dental Society (BDS) and Unilever Bangladesh’s oral care brand Pepsodent
+												jointly organised a programme in the capital's Bangabandhu International Conference
+												Centre (BICC) yesterday marking the World Oral Health Day -2019.
+												With the theme of ‘Say Ahh: Act on Mouth Health’, the day-long programme began with a
+												procession in the morning.
+											</p>
 										</div>
 									</div>
 								</div>
@@ -305,49 +338,15 @@
 				</div>
 
 				<!-- appoinment area -->
-				<div class="col-lg-6">
-					<div class="recent_blog appoinment">
-						<div class="blog_title">
-							<h2>Make an Appointment</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua.</p>
-						</div>
-					</div>
-					<div class="row justify-content-center">
-						<div class="appoinment_form_section lite_bg">
-							<form class="form_area" id="myForm" action="mail.html" method="post">
-								<div class="row">
-									<div class="col-lg-12 form_group">
-										<input name="name" placeholder="Patient name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
-										 class="common_input form-control" required="" type="text">
-										<input name="email" placeholder="Email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-										 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common_input form-control"
-										 required="" type="email">
-										<input name="name" placeholder="Date of birth" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
-										 class="common_input form-control" required="" type="text">
-										<select class="default-select">
-											<option data-display="Doctor’s name">Doctor’s name</option>
-											<option value="1">Rashimul</option>
-											<option value="2">Shofi</option>
-										</select>
-										<input name="subject" placeholder="Appointment date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
-										 class="common_input mb-10 form-control" required="" type="text">
-
-										<textarea class="common_textarea form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''"
-										 onblur="this.placeholder = 'Messege'" required=""></textarea>
-									</div>
-									<div class="col-lg-12 text-center">
-										<button class="primary-btn text-uppercase">confirm booking</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
+				<br> <br> <br> <br> <br> <br>
+					<p> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1826.2624458305586!2d90.39558857057428!3d23.728654761712907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9c94da575df%3A0x8b203b3d5152f883!2sMedical+Centre%2C+University+of+Dhaka!5e0!3m2!1sen!2sbd!4v1556658682744!5m2!1sen!2sbd" width="400" height="500" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+<!--				end map-->
 			</div>
 		</div>
 	</section>
 	<!--================ End Blog Area =================-->
+
+	{% endblock %}
 
 	<!--================ Start footer Area  =================-->
 	<footer class="footer-area section-gap">
@@ -416,5 +415,153 @@
 	<script src="{% static 'js/gmaps.min.js' %}"></script>
 	<script src="{% static 'js/theme.js' %}"></script>
 </body>
+
+
+<style type="text/css" media="screen">
+    html {
+      font-size: 18px;
+    }
+
+    body {
+      font-weight: 400;
+      font-family: "Nunito", "Helvetica Neue", arial, sans-serif;
+      line-height: 1.666;
+      -webkit-font-smoothing: antialiased;
+      color: #5e6c76;
+      margin: 0;
+      padding: 10px 0 0 0;
+    }
+
+    .band {
+      background-image: linear-gradient(to right, #2a27a8 0%,#8c50bc 50%,#fc6e6c 100%);
+      height: 10px;
+      top: 0;
+      right: 0;
+      left: 0;
+      position: fixed;
+    }
+
+    .wrapper {
+      padding: 2em 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    small { color: #aaa; }
+    h1,h2,h3,h4 { color: #404a50; font-weight: 800; font-size: 1.75em; line-height: 1.1; margin: 0 0 1.5rem 0; }
+    h2 a { color: #cad1d5; border: none; }
+    h2 a:hover { color: #fa0065; }
+    a { color: #fa0065; font-weight: 700; transition-duration: .2s; text-decoration: none; border-bottom: 2px solid transparent; }
+    a:hover { color: #22272a; border-color: #22272a; }
+    p, ul, ol, pre { margin: 0 auto 1.5rem auto; }
+    p code, li code {color: #000080; font-size: .9em; }
+    pre { font-size: 14px; line-height: 2; }
+    pre code { overflow: scroll; padding: 1em; border-radius: 4px; background: #f9fafb; color: #475359; }
+    hr { height: 3px; background: #f0f2f3; border: none; margin: 3rem 0; border-radius: 3px; }
+    table {width:100%;border-collapse:collapse;}
+    td { border: 1px solid #eee; padding: 15px; }
+    td pre { margin: 0; }
+    code { font-family: 'fira mono', monospace; }
+    a.btn {
+      color: #fff;
+      background: #FF0066;
+      padding: .5rem .5rem;
+      display: inline-block;
+      border-radius: 4px;
+      transition-duration: .25s;
+      border: none;
+      font-size: 18px;
+    }
+    a.btn:hover {
+      background: #22272a;
+    }
+
+    .header h1 {
+      margin: 1rem 0 .5rem 0;
+    }
+
+    .header iframe {
+      margin-bottom: 2rem;
+    }
+
+    .header p {
+      margin: 0 0 .5rem 0;
+      font-size: 1.25rem;
+    }
+
+    .header ul {
+      list-style-type: none;
+      margin-right: 0;
+      padding: 0;
+      line-height: 2;
+    }
+
+    .header ul li:before {
+      content: '\2714';
+      margin-right: .5em;
+      color: #94be47;
+      font-size: .75em;
+    }
+
+    /* Example 2 (login form) */
+    .login_form.modal {
+      border-radius: 0;
+      line-height: 18px;
+      padding: 0;
+      font-family: "Lucida Grande", Verdana, sans-serif;
+    }
+
+    .login_form h3 {
+      margin: 0;
+      padding: 10px;
+      color: #fff;
+      font-size: 12px;
+      background: #911C8D;
+      background: #911C8D;
+    }
+
+       .login_form h2 {
+      margin: 0;
+      padding: 5px;
+      color: black;
+      font-size: 10px;
+      background: #911C8D;
+      background: #911C8D;
+    }
+
+
+    .login_form.modal p { padding: 10px 15px; border-bottom: 1px solid #ddd; margin: 0;
+      background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #eee),color-stop(1, #fff));
+      overflow: hidden;
+    }
+    .login_form.modal p:last-child { border: none; }
+    .login_form.modal p label { float: left; font-weight: bold; color: #333; font-size: 13px; width: 110px; line-height: 22px; }
+    .login_form.modal p input[type="text"],
+    .login_form.modal p input[type="password"] {
+      font: bold 12px/18px ;
+      padding: 3px;
+      border: 1px solid #ddd;
+      width: 200px;
+    }
+
+    .part {
+      display: none;
+    }
+
+    .modal p { margin: 1em 0; }
+    .modal a.close-modal { border: none; }
+
+    @media(max-width: 600px) {
+      html {
+        font-size: 14px;
+      }
+      h2 a { display: block; margin-bottom: 0.5em; }
+      pre { font-size: 11px; line-height: 1.5; }
+      pre code { padding: 5px; }
+      a.btn { display: block; text-align: center; padding: 1rem; }
+    }
+
+  </style>
+
 
 </html>

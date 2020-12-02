@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+
+
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--{% load staticfiles %}-->
+{% load crispy_forms_tags %}
+
+{% block active_blog %}
+    <ul class="nav navbar-nav menu_nav ml-auto">
+        <li class="nav-item "><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+        <li class="nav-item active"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
+{#                            {% endif %}#}
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'online_advice' %}">Online Advice </a></li>
+        {% endif %}
+        <li class="nav-item"><a class="nav-link" href="https://www.du.ac.bd/">Dhaka University</a></li>
+        <li class="nav-item "><a class="nav-link" href="{% url 'aboutPage' %}">About</a></li>
+{#                            {% if user.username == "ludwigprandtl" %}#}
+{#							<li class="nav-item"><a class="nav-link" href="{% url 'post_notice' %}">Post Notice</a></li>#}
+{#                            {% else %}#}
+        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+
+    </ul>
+{% endblock %}
+
+{% block only_header %}
+    {% if user.is_superuser %}
+        <a href="{% url 'post_notice' %}" class="btn btn-primary" role="button"> Create Post</a>
+        {% endif %}
+    <div class="header-shadow">
+        <br>
+    <div class = "row" style="margin:2px">
+    <div class="col-lg-2">
+        <img src="{% static 'img/notice1.jpg' %}" height="150px"> <br> <br> <br> <br> <br>
+        <img src="{% static 'img/notice2.jpg' %}" height="150px">
+     </div>
+
+    <div class="col-lg-10">
+
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <h2><a class="article-title" >{{ post.title }}</a></h2>
+              <br>
+            <p style="color:black">{{ post.description }}</p>
+              <br>
+          </div>
+        </article>
+{% endfor %}
+
+    </div>
+
+    </div>
+</div>
+<style>
+
+.header-shadow{
+    background: #d5e1df
+  }
+
+
+</style>
+
+{% endblock %}
+
+

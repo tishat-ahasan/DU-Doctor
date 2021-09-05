@@ -1,8 +1,36 @@
 {% extends 'index.html' %}
 
+{% load static %}
+
+<head>
+    <style>
+      .header-shadow{
+     background: -webkit-linear-gradient( #a2b9bc 0%, #9e4fff 100%);
+    }
+ 
+    .card {
+       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+       transition: 0.3s;
+       width: fit-content;
+       height: fit-content;
+       /* align-content: center; */
+     }
+     
+     .card:hover {
+       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+     }
+     
+     .container {
+       margin: 10px;
+       padding: 10px;
+     }
+ 
+ </style>
+ 
+ </head>
 
 {% block active_blog %}
-    <ul class="nav navbar-nav menu_nav ml-auto">
+    <ul class="nav navbar-nav menu_nav ml-auto header-top-right">
         <li class="nav-item "><a class="nav-link" href="{% url 'home' %}">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
 {#                            {% endif %}#}
@@ -20,203 +48,373 @@
 {% endblock %}
 
 {% block only_header %}
-<head>
-   <style>
-	 .header-shadow{
-    background: -webkit-linear-gradient( #a2b9bc 0%, #9e4fff 100%);
-   }
+<!-- <body> -->
 
-</style>
-
-</head>
-<body>
-
-
-    <div class="header-shadow">
-        <table style="border-collapse: collapse">
-
-            <tr>
-                <th align="center">Designation</th>
-                <th align="center">Name</th>
-                <th align="center">Contact No</th>
-
-            </tr>
-            <tr>
-                <td>Cheif Medical Officer </td>
-                <td>Dr.A K M Abdur Rahman </td>
-                <td>01199065631</td>
-
-            </tr>
-
-            <tr>
-                <td>Additional Chief Medical Officer</td>
-                <td>Dr.Sarwar Jahan Muttafi </td>
-                <td>01553300600</td>
-            </tr>
-
-            <tr>
-                <td>Additional Chief Medical Officer</td>
-                <td>Dr.Muhammad Said Ullah (L.P.R) </td>
-                <td>01911341513</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr.Borhan Uddin Molik </td>
-                <td>01198115440</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr.Hafeza Jaman </td>
-                <td>01715106840</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr.Md.Jalal Uddin Ahmed </td>
-                <td>0155238702</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr.Md Nurul Islam</td>
-                <td>01731914007</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr.Razia Rahman</td>
-                <td>01817516559</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr.Nur-Muhammad </td>
-                <td>01710562467</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr.Tanvir Ali</td>
-                <td>01772133301</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr.Md. Salah Uddin</td>
-                <td>01721935937</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr. A M Sazzad Hossain</td>
-                <td>01552470474</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr. Md Sharif Kamruddin</td>
-                <td>01712598031</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr. Arif Reza Sikder</td>
-                <td>01715008055</td>
-            </tr>
-
-            <tr>
-                <td>Senior Medical Officer</td>
-                <td>Dr. Ferdousi Purobi Chowdhury</td>
-                <td>01712160744</td>
-            </tr>
-
-            <tr>
-                <td>Medical Officer</td>
-                <td>Dr. Jamil Shahedi</td>
-                <td>01712749278</td>
-            </tr>
-
-            <tr>
-                <td>Medical Officer</td>
-                <td>Dr. Nargis Fatema (patholoy)</td>
-                <td>01713045169</td>
-            </tr>
-
-            <tr>
-                <td>Medical Officer</td>
-                <td>Dr. Rathindranath Sarkar</td>
-                <td>01716216189</td>
-            </tr>
-
-            <tr>
-                <td>Medical Officer</td>
-                <td>Dr. Syed Al Amin</td>
-                <td>01911364013</td>
-            </tr>
-
-            <tr>
-                <td>Medical Officer</td>
-                <td>Dr. Shamima Parvin </td>
-                <td>01818373258</td>
-            </tr>
-
-
-            <tr>
-                <td>Medical Officer</td>
-                <td>Dr. Mahbuba Akhter </td>
-                <td>01552433552</td>
-            </tr>
-
-            <tr>
-                <td>Medical Officer</td>
-                <td>Dr. Shariful Islam </td>
-                <td>01717786726</td>
-            </tr>
-
-            <tr>
-                <td>Assistant Medical Officer</td>
-                <td>Dr. Sumonto kundo </td>
-                <td>01720957759</td>
-            </tr>
-
-            <tr>
-                <td>Parttime Medical Officer</td>
-                <td>Dr. Captain M A Salam  </td>
-                <td>01720107177</td>
-            </tr>
-            <tr>
-                <td>Parttime Medical Officer</td>
-                <td>Dr. Monirul Islam (Radilogist)</td>
-                <td>01912999116</td>
-            </tr>
-
-            <tr>
-                <td>Parttime Medical Officer</td>
-                <td>Dr. Md Jakaria (ENT)</td>
-                <td>01716578378</td>
-            </tr>
-
-             <tr>
-                <td>Parttime Medical Officer</td>
-                <td>Dr. Md Sirajul Haque (Heart)</td>
-                <td>01819291182</td>
-            </tr>
-
-             <tr>
-                <td>Parttime Medical Officer</td>
-                <td>Dr. Rakhi Pal</td>
-                <td>01819810801</td>
-            </tr>
-
-            <tr>
-                <td>Parttime Medical Officer</td>
-                <td>Dr. Jesmin Ferdous (Ultrasonogram)</td>
-                <td>01552473314</td>
-            </tr>
-        </table>
+<div class="container">
+<div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr.A K M Abdur Rahman</b></h4>
+              <p>Cheif Medical Officer</p>
+              <h6> 01199065631 </h6>
+            </div>
+            </div>
+          </div> 
     </div>
-</body>
-</html>
+    
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+            <h4><b>Dr.Sarwar Jahan Muttafi</b></h4>
+              <p>Additional Chief Medical Officer</p>
+              <h6> 01553300600 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr.Muhammad Said Ullah (L.P.R)</b></h4>
+              <p>Additional Chief Medical Officer</p>
+              <h6> 01911341513 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr.Borhan Uddin Molik</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6> 01198115440 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr.Hafeza Jaman</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6> 01715106840 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr.Md.Jalal Uddin Ahmed</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6> 0155238702 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr.Md Nurul Islam</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6> 01731914007 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr.Razia Rahman</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6> 01817516559 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr.Nur-Muhammad</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6>01710562467 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr.Tanvir Ali</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6> 01772133301 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr.Md. Salah Uddin</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6>01721935937 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. A M Sazzad Hossain</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6> 01552470474 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Md Sharif Kamruddin</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6>01712598031 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Arif Reza Sikder</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6> 01715008055 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+
+  </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Ferdousi Purobi Chowdhury</b></h4>
+              <p>Senior Medical Officer</p>
+              <h6>01712160744 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Jamil Shahedi</b></h4>
+              <p> Medical Officer</p>
+              <h6> 01712749278 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Nargis Fatema (patholoy)</b></h4>
+              <p>Medical Officer</p>
+              <h6>01713045169 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Rathindranath Sarkar</b></h4>
+              <p> Medical Officer</p>
+              <h6> 01716216189 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Syed Al Amin</b></h4>
+              <p>Medical Officer</p>
+              <h6>01911364013 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Shamima Parvin</b></h4>
+              <p> Medical Officer</p>
+              <h6> 01818373258 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Mahbuba Akhter</b></h4>
+              <p>Medical Officer</p>
+              <h6>01552433552 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Shariful Islam</b></h4>
+              <p> Medical Officer</p>
+              <h6> 01717786726 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+
+  </div>
+
+  <div class="container">
+  <div class="row">
+    <div class="column">
+        <div class="container">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <div class="container">
+              <h4><b>Dr. Sumonto kundo</b></h4>
+              <p>Assistant Medical Officer</p>
+              <h6>01720957759 </h6>
+            </div>
+            </div>
+          </div> 
+    </div>
+  </div>
+  
+</div>
+</div>
+
+<!-- </body>
+</html> -->
 {% endblock %}

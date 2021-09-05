@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
 	<link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}">
 	<link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}">
-	<link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}">
+	
 	<!-- main css -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
@@ -28,7 +28,8 @@
 	<!-- jQuery Modal -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-
+	<!-- <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
@@ -91,7 +92,8 @@
 		<div>
 
 			</div>
-			<nav class="navbar navbar-expand-lg ">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="{% url 'home' %} "><img src="{% static 'img/DU-Logo-Light.png' %}" alt="..." height="36"></a>
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<a class="navbar-brand logo_h" href="{% url 'home' %}"><img src="{% static 'img/favi_con.png' %}" alt=""></a>
@@ -104,19 +106,19 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div id="navbarSupportedContent">
 						{% block active_blog %}
-						<ul class="nav navbar-nav menu_nav ml-auto">
+						<ul class="nav navbar-nav ml-auto">
 							<li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
+							<li class="nav-item"><a class="nav-link" style="color:floralwhite;" href="{% url 'show_notice' %}">Notice</a></li>
 {#                            {% endif %}#}
 							{% if user.is_authenticated %}
-							<li class="nav-item"><a class="nav-link" href="{% url 'online_advice' %}">Online Advice </a></li>
+							<li class="nav-item"><a class="nav-link" style="color:floralwhite;" href="{% url 'online_advice' %}">Online Advice </a></li>
 							{% endif %}
-							<li class="nav-item"><a class="nav-link" href="https://www.du.ac.bd/">Dhaka University</a></li>
-                            <li class="nav-item "><a class="nav-link" href="{% url 'aboutPage' %}">About</a></li>
+							<li class="nav-item"><a class="nav-link" style="color:floralwhite;" href="https://www.du.ac.bd/">Dhaka University</a></li>
+                            <!-- <li class="nav-item "><a class="nav-link" style="color:floralwhite;" href="{% url 'aboutPage' %}">About</a></li> -->
 {#                            {% if user.username == "ludwigprandtl" %}#}
-{#							<li class="nav-item"><a class="nav-link" href="{% url 'post_notice' %}">Post Notice</a></li>#}
+{#							<li class="nav-item"><a class="nav-link" style="color:floralwhite;" href="{% url 'post_notice' %}">Post Notice</a></li>#}
 {#                            {% else %}#}
-							<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+							<li class="nav-item"><a class="nav-link" style="color:floralwhite;" href="{% url 'contact' %}">Contact</a></li>
 
 						</ul>
 						{% endblock %}
@@ -132,7 +134,7 @@
 
 	{% block only_header %}
 
-	<div class="form-group">
+	<!-- <div class="form-group"> -->
         {% if messages  %}
         <ul class="messages">
             {% for message in messages %}
@@ -142,15 +144,23 @@
             {% endfor %}
         </ul>
         {% endif %}
-    </div>
+    <!-- </div> -->
 
 	{% block homebanner %}
 	<!--================ Start Home Banner Area =================-->
 	<section class="home_banner_area">
 		<div class="banner_inner">
 			<div class="container">
-				<div class="banner_content">
+				<div class="banner_content animate__animated animate__fadeInLeftBig">
 					<h2>
+
+					</h2>
+					<h2>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
 						Welcome to<br>
 						Dhaka University<br>
 						Medical Center <br>
@@ -161,69 +171,123 @@
 				</div>
 			</div>
 		</div>
+
+
+		<div class="col-lg-4 offset-lg-2 col-md-6 offset-md-1">
+			<div class="about_right overlay">
+				<div class="about_inner">
+					<h4>Doctors Time Table</h4>
+					<p>Saturday  -- 10.00 AM to 02.00 PM</p>
+					<p>Sunday    -- 08.00 AM to 05.00 PM</p>
+					<p>Monday    -- 08.00 AM to 05.00 PM</p>
+					<p>Tuesday   -- 08.00 AM to 05.00 PM</p>
+					<p>Wednesday -- 08.00 AM to 05.00 PM</p>
+					<p>Thursday  -- 08.00 AM to 02.00 PM </p>
+					<p>Friday  -- 08.00 AM to 02.00 PM </p>
+				</div>
+
+			</div>
+		</div>
+
+
 	</section>
 	<!--================ End Home Banner Area =================-->
 	{% endblock %}
 
 	{% block feature_area %}
 
+
 	<!--================ Start Features Area =================-->
-	<section class="features_area section_gap">
+	<section class="about_area lite_bg">
 		<div class="container">
-			<div class="row">
-				<!-- single feature -->
-				<div class="col-lg-4 col-md-6">
-					<div class="single_feature">
-						<div class="feature_head">
-							<img src="{% static 'img/features/icon1.png' %}" alt="">
-							<h4>Emergency Services</h4>
-						</div>
-						<div class="feature_content">
-							<p>Provides 24/7 Emergency Services with free of cost among the students.</p>
-							<div class="feature_btn">
-								<a href="tel:+8801798-762920" class="f_btn">Call Us: 01798-762920</a>
+			<div class="row align-items-center">
+				<div class="col-lg-12 col-md-5">
+					<div class="about_details lite_bg">
+						<h2 class="animate__animated animate__fadeInLeftBig">Dhaka University Medicare Center</h2>
+						<p class="animate__animated animate__fadeInLeftBig">
+                            The Medical Centre of the University of Dhaka, located near the Science Annex Building, offers free medical service and free pathological examinations to students,
+                            teachers and staffs of the University and also family members of the teachers and staffs.
+                            The Centre provides service round the clock, seven days a week, with 30 doctors working in different shifts. <br>
+
+                            The Centre also has dental unit, eye unit, x-ray department and two ambulances. The Centre has in its premises arrangement for 30 bed
+                            accommodation so that students suffering from such contagious diseases as chicken pox, mumps, etc. may be taken care of in isolation. <br>
+							<br></p>
+
+						<section class=class="banner_inner">
+							<div>
+								<img src="{% static 'img/banner/mc_middle.jpg' %}" class="center"/>
+								<figcaption class="center"></figcaption>
 							</div>
-						</div>
+
+						</section>
+						<br>
+
+                         <p class="animate__animated animate__fadeInLeftBig">
+							A small Operation Theatre has been established in the Centre to meet minor surgeries. <br>
+
+                            Students get medicine from the Centre free of cost and employees get medicine at cost price.
+                            Physiotherapy service is also given to senior members and disable patients of the university family.
+                            A Homeo Unit, consisting of 6 Homeo doctors, provides treatment and medicines free of cost to the students,
+                            teachers and staffs and their family members. <br>
+                            Head of Office:  Dr. A.K.M. Abdur Rahman <br>
+                            Designation:  Chief Medical Officer (Acting) <br>
+                        </p>
+
 					</div>
 				</div>
-				<!-- single feature -->
-				<div class="col-lg-4 col-md-6">
-					<div class="single_feature">
-						<div class="feature_head">
-							<img src="{% static 'img/features/icon2.png' %}" alt="">
-							<h4>Doctors Schedule</h4>
-						</div>
-						<div class="feature_content">
-							<p>30 doctors working in different shifts with 13 senior medical officers,7 Medical Officers,6 doctors in HOMEO Unit.</p>
-							<div class="feature_btn">
 
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- single feature -->
-				<div class="col-lg-4 col-md-6">
-					<div class="single_feature">
-						<div class="feature_head">
-							<img src="{% static 'img/features/icon3.png' %}" alt="">
-							<h4>Online Appointment</h4>
-						</div>
-						<div class="feature_content">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore magna aliqua. Ut enim ad minim veniam.</p>
-							<div class="feature_btn">
-								{% if user.is_superuser %}
+			</div>
 
-                            	{% elif user.is_authenticated %}
-                        		<a href="{% url 'appointment' %}" class="f_btn">Get Appointment</a>
-                        		{% endif %}
-							</div>
-						</div>
-					</div>
+		</div>
+	</section>
+
+
+	<div class="container">
+		<div class="col-lg-4">
+		</div>
+		<div class="col-lg-4">
+			<div class="recent_blog">
+				<div class="blog_title">
+					<h1 class="animate__animated animate__bounce">An animated element</h1>
 				</div>
 			</div>
 		</div>
-	</section>
+		<div class="col-lg-4">
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+		    <div class="column">
+		        <div class="container">
+		        <div class="card">
+		            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+		            <div class="container">
+		              <h4><b>Dr.A K M Abdur Rahman</b></h4>
+		              <p>Cheif Medical Officer</p>
+		              <h6> 01199065631 </h6>
+		            </div>
+		            </div>
+		          </div> 
+		    </div>
+		    
+		    <div class="column">
+		        <div class="container">
+		        <div class="card">
+		            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+		            <div class="container">
+		            <h4><b>Dr.Sarwar Jahan Muttafi</b></h4>
+		              <p>Additional Chief Medical Officer</p>
+		              <h6> 01553300600 </h6>
+		            </div>
+		            </div>
+		          </div> 
+		    </div>
+		</div>
+	</div>
+
+
+
 	<!--================ End Features Area =================-->
 
 	{% endblock %}
@@ -266,90 +330,13 @@
 
 
 	<!--================ Start Blog Area =================-->
-	<section class="section_gap blog_area">
-		<div class="container">
-			<div class="row">
-				<!-- recent blog -->
-				<div class="col-lg-6">
-					<div class="recent_blog">
-						<div class="blog_title">
-							<h2>Important Notice</h2>
 
-						</div>
-					</div>
-					<div class="row">
-						<!-- single-blog -->
-						<div class="col-lg-12 col-sm-12">
-							<div class="single_blog">
-								<div class="row align-items-center">
-									<div class="col-lg-4 col-md-3">
-										<div class="blog_thumb">
-											<img class="img-fluid" src="{% static 'img/recent-blog/blog2.jpg' %}" alt="">
-										</div>
-									</div>
-									<div class="col-lg-8 col-md-8">
-										<div class="blog_details">
-
-											<h4>
-												<a href="https://www.daily-sun.com/post/342222/2018/10/10/Dhaka-University-observes-World-Mental-Health-Day">Dhaka University observes World Mental Health Day</a>
-											</h4>
-											<p>
-												The World Mental Health Day 2018 was observed on Dhaka University (DU) campus
-												through different programmes including discussions on Wednesday.
-												This year's theme of the day is ‘Young people and mental health in a changing world’.
-												Marking the day, DU Educational and Counseling Psychology (ECP) department
-												and Students Counseling and Guidance Service Office jointly set up a stall in front
-												of Teacher-Student Center (TSC) to provide free mental services to the people.
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12 col-sm-12">
-							<div class="single_blog">
-								<div class="row align-items-center">
-									<div class="col-lg-4 col-md-3">
-										<div class="blog_thumb">
-											<img class="img-fluid" src="{% static 'img/recent-blog/blog3.jpg' %}" alt="">
-										</div>
-									</div>
-									<div class="col-lg-8 col-md-8">
-										<div class="blog_details">
-											<div class="blog_meta">
-
-											</div>
-											<h4>
-												<a href="http://www.theindependentbd.com/printversion/details/192412">World Oral Health Day</a>
-											</h4>
-											<p>
-												Bangladesh Dental Society (BDS) and Unilever Bangladesh’s oral care brand Pepsodent
-												jointly organised a programme in the capital's Bangabandhu International Conference
-												Centre (BICC) yesterday marking the World Oral Health Day -2019.
-												With the theme of ‘Say Ahh: Act on Mouth Health’, the day-long programme began with a
-												procession in the morning.
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- appoinment area -->
-				<br> <br> <br> <br> <br> <br>
-					<p> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1826.2624458305586!2d90.39558857057428!3d23.728654761712907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9c94da575df%3A0x8b203b3d5152f883!2sMedical+Centre%2C+University+of+Dhaka!5e0!3m2!1sen!2sbd!4v1556658682744!5m2!1sen!2sbd" width="400" height="500" frameborder="0" style="border:0" allowfullscreen></iframe></p>
-<!--				end map-->
-			</div>
-		</div>
-	</section>
 	<!--================ End Blog Area =================-->
 
 	{% endblock %}
 
 	<!--================ Start footer Area  =================-->
-	<footer class="footer-area section-gap">
+	<footer class="footer-area">
 		<div class="footer_top section_gap">
 			<div class="container">
 				<div class="row">
@@ -377,20 +364,10 @@
 							</p>
 						</div>
 					</div>
-
-				</div>
-
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="d-flex justify-content-between align-items-center flex-wrap">
-
-					<div class="footer-social d-flex align-items-center">
-						<pi>website</pi>
-						<a href="http://www.du.ac.bd/home/office_and_admin/mdc"><i class="fa fa-dribbble"></i></a>
-
-					</div>
+						<!-- appoinment area -->
+						<br> <br> <br> <br> <br> <br>
+					<p> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1826.2624458305586!2d90.39558857057428!3d23.728654761712907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9c94da575df%3A0x8b203b3d5152f883!2sMedical+Centre%2C+University+of+Dhaka!5e0!3m2!1sen!2sbd!4v1556658682744!5m2!1sen!2sbd" width="300" height="350" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+<!--				end map-->
 				</div>
 			</div>
 		</div>

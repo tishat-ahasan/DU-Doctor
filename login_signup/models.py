@@ -13,6 +13,22 @@ class UserProfileInfo(models.Model):
         ('Other', 'Other'),
     )
 
+    # hall_choices = (
+    #     ('Dr. muhammad sahidullah hall', 'Dr. muhammad sahidullah hall'),
+    #     ('Amor ekushey', 'Amor ekushey'),
+    #     ('Bijoy ekattor', 'Bijoy ekattor'),
+    #     ('Shamsunnahar', 'Shamsunnahar'),
+    #     ('Sufia kamal', 'Sufia kamal'),
+    # )
+
+    # dept_choices = (
+    #     ('CSE', 'CSE'),
+    #     ('EEE', 'EEE'),
+    #     ('Bijoy ekattor', 'Bijoy ekattor'),
+    #     ('Shamsunnahar', 'Shamsunnahar'),
+    #     ('Sufia kamal', 'Sufia kamal'),
+    # )
+
     user = models.OneToOneField(User,on_delete=models.CASCADE)
 
     # portfolio_site = models.URLField(blank=True)

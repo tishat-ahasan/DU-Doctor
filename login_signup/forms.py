@@ -15,4 +15,4 @@ class UserForm(UserCreationForm):
 class UserProfileInfoForm(forms.ModelForm):
      class Meta():
          model = UserProfileInfo
-         fields = ('registration_number','gender','hall_name','department_name','admission_year','phone_number','blood_group','date_of_birth')
+         fields = ('registration_number','gender','department_name','hall_name','admission_year','phone_number','blood_group','date_of_birth')

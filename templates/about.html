@@ -1,101 +1,162 @@
-{% extends 'index.html' %}
-
-{% load static%}
-
-{% block homebanner %}
-<style>
-	 .header-shadow{
-    background: -webkit-linear-gradient(90deg, #772dff 0%, #9e4fff 100%);
-  background: -moz-linear-gradient(90deg, #772dff 0%, #9e4fff 100%);
-  background: -ms-linear-gradient(90deg, #772dff 0%, #9e4fff 100%);
-  background: -o-linear-gradient(90deg, #772dff 0%, #9e4fff 100%);
-  background: linear-gradient(90deg, #772dff 0%, #9e4fff 100%); }
-
-</style>
-<section class=class="banner_inner">
-
-		<div class="header-shadow">
-			<br>
-			<img src="{% static 'img/banner/DUMedicalCenter.jpg' %}" class="center"/>
-			<figcaption class="center" style="color:black">Fig.1 - Dhaka university Medical Center</figcaption>
-		</div>
-
-</section>
-
-{% endblock %}
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap tutorial for begineers</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="CustomStyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+</head>
+<body>
+    <br />
+    
 
 
 
-{% block active_blog %}
-    <ul class="nav navbar-nav menu_nav ml-auto">
-        <li class="nav-item "><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
-{#                            {% endif %}#}
-        {% if user.is_authenticated %}
-        <li class="nav-item"><a class="nav-link" href="{% url 'online_advice' %}">Online Advice </a></li>
-        {% endif %}
-        <li class="nav-item"><a class="nav-link" href="https://www.du.ac.bd/">Dhaka University</a></li>
-        <li class="nav-item active"><a class="nav-link" href="{% url 'aboutPage' %}">About</a></li>
-{#                            {% if user.username == "ludwigprandtl" %}#}
-{#							<li class="nav-item"><a class="nav-link" href="{% url 'post_notice' %}">Post Notice</a></li>#}
-{#                            {% else %}#}
-        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+    <div class="container text-center my-3">
+    <div class="row mx-auto my-auto">
+        <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item py-5 active">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Card 1</h4>
+                                <p class="card-text">Some make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Card 2</h4>
+                                <p class="card-text">Some make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Card 3</h4>
+                                <p class="card-text">Some make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Card 4</h4>
+                                <p class="card-text">Some make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item py-5">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Card</h4>
+                                <p class="card-text">Some make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Card</h4>
+                                <p class="card-text">Some make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item py-5">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Card</h4>
+                                <p class="card-text">Some make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Card</h4>
+                                <p class="card-text">Some make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item py-5">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Card</h4>
+                                <p class="card-text">Some make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                              <div class="card-body">
+                                <h4 class="card-title">Card</h4>
+                                <p class="card-text">Some make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Button</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
+                <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
+                <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
 
-    </ul>
-{% endblock %}
-
-
-{% block feature_area %}
 
 
 
 
-{% endblock %}
-
-	{% block about_area %}
-	<section class="about_area lite_bg">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-12 col-md-5">
-					<div class="about_details lite_bg">
-						<h2>Dhaka University Medicare Center</h2>
-						<p>
-                            The Medical Centre of the University of Dhaka, located near the Science Annex Building, offers free medical service and free pathological examinations to students,
-                            teachers and staffs of the University and also family members of the teachers and staffs.
-                            The Centre provides service round the clock, seven days a week, with 30 doctors working in different shifts. <br>
-
-                            The Centre also has dental unit, eye unit, x-ray department and two ambulances. The Centre has in its premises arrangement for 30 bed
-                            accommodation so that students suffering from such contagious diseases as chicken pox, mumps, etc. may be taken care of in isolation. <br>
-							<br></p>
-
-						<section class=class="banner_inner">
-							<div>
-								<img src="{% static 'img/banner/operationtheatre.jpg' %}" class="center"/>
-								<figcaption class="center">Fig.2 - Medical Center Operation Theatre</figcaption>
-							</div>
-
-						</section>
-						<br>
-
-                         <p>
-							A small Operation Theatre has been established in the Centre to meet minor surgeries. <br>
-
-                            Students get medicine from the Centre free of cost and employees get medicine at cost price.
-                            Physiotherapy service is also given to senior members and disable patients of the university family.
-                            A Homeo Unit, consisting of 6 Homeo doctors, provides treatment and medicines free of cost to the students,
-                            teachers and staffs and their family members. <br>
-                            Head of Office:  Dr. A.K.M. Abdur Rahman <br>
-                            Designation:  Chief Medical Officer (Acting) <br>
-                        </p>
-
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-	</section>
-							{% endblock %}
-	<!--================ End About Area =================-->
 
 
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

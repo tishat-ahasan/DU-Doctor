@@ -70,7 +70,7 @@
 <!--						<a href="{% url 'login_signup:user_login' %}">Login</a>-->
 
 						<a href="#ex2" rel="modal:open">Login</a>
-						<form method="post" action="{% url 'login_signup:user_login' %}" class="login_form modal" id="ex2" style="display:none;">
+						<form method="post" action="{% url 'login_signup:user_login' %}" class="login_form modal" id="ex2" style="display:none">
   							{% csrf_token %}
 							<h3>Please login to continue</h3>
 							<p><label>Username:</label>
@@ -80,7 +80,7 @@
 							<p><input class="btn btn-primary" type="submit" value="Login" /> or
 								<a class="btn btn-primary" href="#"> sign up</a>
 								<br> <br> <br>
-								forgot password?click here
+								<!-- forgot password?click here -->
 							</p>
 						</form>
                         {% endif %}
@@ -506,12 +506,19 @@
       background: #911C8D;
     }
 
+	.modal a.close-modal { border: none;
+	/* padding-top: 5 px; */
+	margin-top: 13px;
+	margin-right: 15px; 
+	
+	}
+
 
     .login_form.modal p { padding: 10px 15px; border-bottom: 1px solid #ddd; margin: 0;
       background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #eee),color-stop(1, #fff));
       overflow: hidden;
     }
-    .login_form.modal p:last-child { border: none; }
+    .login_form.modal p:last-child { border: 2 px; }
     .login_form.modal p label { float: left; font-weight: bold; color: #333; font-size: 13px; width: 110px; line-height: 22px; }
     .login_form.modal p input[type="text"],
     .login_form.modal p input[type="password"] {
@@ -526,7 +533,7 @@
     }
 
     .modal p { margin: 1em 0; }
-    .modal a.close-modal { border: none; }
+    
 
     @media(max-width: 600px) {
       html {

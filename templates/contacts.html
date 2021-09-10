@@ -30,391 +30,473 @@
  </head>
 
 {% block active_blog %}
-    <ul class="nav navbar-nav menu_nav ml-auto header-top-right">
-        <li class="nav-item "><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'show_notice' %}">Notice</a></li>
-{#                            {% endif %}#}
-        {% if user.is_authenticated %}
-        <li class="nav-item"><a class="nav-link" href="{% url 'online_advice' %}">Online Advice </a></li>
-        {% endif %}
-        <li class="nav-item"><a class="nav-link" href="https://www.du.ac.bd/">Dhaka University</a></li>
-        <li class="nav-item "><a class="nav-link" href="{% url 'aboutPage' %}">About</a></li>
-{#                            {% if user.username == "ludwigprandtl" %}#}
-{#							<li class="nav-item"><a class="nav-link" href="{% url 'post_notice' %}">Post Notice</a></li>#}
-{#                            {% else %}#}
-        <li class="nav-item active"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-
-    </ul>
+    <ul class="nav navbar-nav ml-auto">
+     <li class="nav-item "><a class="nav-link" style="color:floralwhite;" href="{% url 'home' %}">Home</a></li>
+     <li class="nav-item"><a class="nav-link" style="color:floralwhite;" href="{% url 'show_notice' %}">Notice</a></li>
+     {#                            {% endif %}#}
+     {% if user.is_authenticated %}
+     <li class="nav-item"><a class="nav-link" style="color:floralwhite;" href="{% url 'online_advice' %}">Online Advice </a></li>
+     {% endif %}
+     <li class="nav-item"><a class="nav-link" style="color:floralwhite;" href="https://www.du.ac.bd/">Dhaka University</a></li>
+     <!-- <li class="nav-item "><a class="nav-link" style="color:floralwhite;" href="{% url 'aboutPage' %}">About</a></li> -->
+     {% if user.username == "ludwigprandtl" %}
+                            
+     <li class="nav-item"><a class="nav-link" style="color:floralwhite;" href="{% url 'post_notice' %}">Post Notice</a></li>
+     
+     {% else %}
+     <li class="nav-item active"><a class="nav-link"  href="{% url 'contact' %}">Contact</a></li>
+  </ul>
+  {% endif %}
 {% endblock %}
 
 {% block only_header %}
 <!-- <body> -->
+<section style="background-color: #DADED4; padding:25px 30px 25px 30px;">
+<br>
+<h1 style="background: #fe921f; color: #ffffff; display: inline-block; font-family: 'Lato', sans-serif; font-size: 12px; font-weight: bold; line-height: 12px; letter-spacing: 1px; margin: 10 0 30px; padding: 10px 15px 8px; text-transform: uppercase; float: center;"> Doctor Contacts </h1>
 
-<div class="container">
-<div class="row">
-    <div class="column">
-        <div class="container">
-        <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
-            <div class="container">
-              <h4><b>Dr.A K M Abdur Rahman</b></h4>
-              <p>Cheif Medical Officer</p>
-              <h6> 01199065631 </h6>
-            </div>
-            </div>
-          </div> 
-    </div>
+
+<!-- <div class="container">
+
+  <div class="row">
+
     
-    <div class="column">
-        <div class="container">
-        <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
-            <div class="container">
-            <h4><b>Dr.Sarwar Jahan Muttafi</b></h4>
-              <p>Additional Chief Medical Officer</p>
-              <h6> 01553300600 </h6>
-            </div>
-            </div>
-          </div> 
-    </div>
 
-  </div>
-</div>
-
-<div class="container">
-
-  <div class="row">
-
-    <div class="column">
-        <div class="container">
-        <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
-            <div class="container">
-              <h4><b>Dr.Muhammad Said Ullah (L.P.R)</b></h4>
-              <p>Additional Chief Medical Officer</p>
-              <h6> 01911341513 </h6>
-            </div>
-            </div>
-          </div> 
-    </div>
-
-    <div class="column">
-        <div class="container">
-        <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
-            <div class="container">
-              <h4><b>Dr.Borhan Uddin Molik</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6> 01198115440 </h6>
-            </div>
-            </div>
-          </div> 
-    </div>
+    
   </div>
 
-</div>
+</div> -->
 
-<div class="container">
-
-  <div class="row">
-    <div class="column">
-        <div class="container">
-        <div class="card">
-            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:33%">
-            <div class="container">
-              <h4><b>Dr.Hafeza Jaman</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6> 01715106840 </h6>
-            </div>
-            </div>
-          </div> 
-    </div>
-
-    <div class="column">
-        <div class="container">
-        <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
-            <div class="container">
-              <h4><b>Dr.Md.Jalal Uddin Ahmed</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6> 0155238702 </h6>
-            </div>
-            </div>
-          </div> 
-    </div>
-  </div>
-
-</div>
-
+<br>
 <div class="container">
   <div class="row">
-    <div class="column">
-        <div class="container">
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-right">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr.Md Nurul Islam</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6> 01731914007 </h6>
+                <p></p>
+            <p>
+                <b>Dr.A K M Abdur Rahman</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Cheif Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801199065631
+            </p>
             </div>
             </div>
           </div> 
     </div>
 
-    <div class="column">
-        <div class="container">
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-up">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr.Razia Rahman</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6> 01817516559 </h6>
-            </div>
-            </div>
-          </div> 
-    </div>
-  </div>
-
-</div>
-
-<div class="container">
-
-  <div class="row">
-    <div class="column">
-        <div class="container">
-        <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
-            <div class="container">
-              <h4><b>Dr.Nur-Muhammad</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6>01710562467 </h6>
+              <p></p>
+              
+            <p>
+                <b>Dr.Sarwar Jahan Muttafi</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Additional Chief Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801553300600  
+            </p>
             </div>
             </div>
           </div> 
     </div>
 
-    <div class="column">
-        <div class="container">
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-left">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr.Tanvir Ali</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6> 01772133301 </h6>
+                <p></p>
+              
+            <p>
+                <b>Dr.Muhammad Said Ullah (L.P.R)</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Additional Chief Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801911341513
+            </p>
             </div>
             </div>
           </div> 
     </div>
   </div>
-
 </div>
 
+
+<br>
 <div class="container">
   <div class="row">
-    <div class="column">
-        <div class="container">
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-right">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr.Md. Salah Uddin</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6>01721935937 </h6>
+                <p></p>
+            <p>
+                <b>Dr.Borhan Uddin Molik</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801198115440 
+            </p>
             </div>
             </div>
           </div> 
     </div>
 
-    <div class="column">
-        <div class="container">
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-up">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. A M Sazzad Hossain</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6> 01552470474 </h6>
+              <p></p>
+              
+            <p>
+                <b>Dr.Hafeza Jaman</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801715106840 
+            </p>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-left">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
+            <div class="container">
+                <p></p>
+              
+            <p>
+                <b>Dr.Md.Jalal Uddin Ahmed</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801715106840 
+            </p>
             </div>
             </div>
           </div> 
     </div>
   </div>
-
 </div>
 
+<br>
 <div class="container">
   <div class="row">
-    <div class="column">
-        <div class="container">
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-right">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Md Sharif Kamruddin</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6>01712598031 </h6>
+                <p></p>
+            <p>
+                <b>Dr.Md Nurul Islam</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801731914007 
+            </p>
             </div>
             </div>
           </div> 
     </div>
 
-    <div class="column">
-        <div class="container">
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-up">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Arif Reza Sikder</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6> 01715008055 </h6>
+              <p></p>
+              
+            <p>
+                <b>Dr.Razia Rahma</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801817516559  
+            </p>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-left">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
+            <div class="container">
+                <p></p>
+              
+            <p>
+                <b>Dr.Nur-Muhammad</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801710562467 
+            </p>
             </div>
             </div>
           </div> 
     </div>
   </div>
+</div>
 
-  </div>
-
-
+<br>
 <div class="container">
   <div class="row">
-    <div class="column">
-        <div class="container">
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-right">
         <div class="card">
-            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Ferdousi Purobi Chowdhury</b></h4>
-              <p>Senior Medical Officer</p>
-              <h6>01712160744 </h6>
+                <p></p>
+            <p>
+                <b>Dr.Tanvir Ali</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801772133301
+            </p>
             </div>
             </div>
           </div> 
     </div>
 
-    <div class="column">
-        <div class="container">
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-up">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Jamil Shahedi</b></h4>
-              <p> Medical Officer</p>
-              <h6> 01712749278 </h6>
+              <p></p>
+              
+            <p>
+                <b>Dr.Md. Salah Uddin</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801721935937  
+            </p>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-left">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
+            <div class="container">
+                <p></p>
+              
+            <p>
+                <b>Dr. A M Sazzad Hossain</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801552470474
+            </p>
             </div>
             </div>
           </div> 
     </div>
   </div>
-
 </div>
 
+
+<br>
 <div class="container">
   <div class="row">
-    <div class="column">
-        <div class="container">
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-right">
         <div class="card">
-            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Nargis Fatema (patholoy)</b></h4>
-              <p>Medical Officer</p>
-              <h6>01713045169 </h6>
+                <p></p>
+            <p>
+                <b>Dr. Md Sharif Kamruddin</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801712598031
+            </p>
             </div>
             </div>
           </div> 
     </div>
 
-    <div class="column">
-        <div class="container">
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-up">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Rathindranath Sarkar</b></h4>
-              <p> Medical Officer</p>
-              <h6> 01716216189 </h6>
+              <p></p>
+              
+            <p>
+                <b>Dr. Arif Reza Sikder</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801715008055  
+            </p>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-left">
+        <div class="card">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
+            <div class="container">
+                <p></p>
+              
+            <p>
+                <b>Dr. Ferdousi Purobi Chowdhury</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Senior Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801712160744
+            </p>
             </div>
             </div>
           </div> 
     </div>
   </div>
-
 </div>
 
+
+<br>
 <div class="container">
   <div class="row">
-    <div class="column">
-        <div class="container">
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-right">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Syed Al Amin</b></h4>
-              <p>Medical Officer</p>
-              <h6>01911364013 </h6>
+                <p></p>
+            <p>
+                <b>Dr. Nargis Fatema (patholoy)</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801713045169
+            </p>
             </div>
             </div>
           </div> 
     </div>
 
-    <div class="column">
-        <div class="container">
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-up">
         <div class="card">
-            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Shamima Parvin</b></h4>
-              <p> Medical Officer</p>
-              <h6> 01818373258 </h6>
+              <p></p>
+              
+            <p>
+                <b>Dr. Rathindranath Sarkar</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801716216189  
+            </p>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-left">
+        <div class="card">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
+            <div class="container">
+                <p></p>
+              
+            <p>
+                <b>Dr. Shamima Parvin</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801818373258
+            </p>
             </div>
             </div>
           </div> 
     </div>
   </div>
-
 </div>
 
+
+<br>
 <div class="container">
   <div class="row">
-    <div class="column">
-        <div class="container">
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-right">
         <div class="card">
-            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Mahbuba Akhter</b></h4>
-              <p>Medical Officer</p>
-              <h6>01552433552 </h6>
+                <p></p>
+            <p>
+                <b>Dr. Syed Al Amin</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801911364013
+            </p>
             </div>
             </div>
           </div> 
     </div>
 
-    <div class="column">
-        <div class="container">
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-up">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/female_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Shariful Islam</b></h4>
-              <p> Medical Officer</p>
-              <h6> 01717786726 </h6>
+              <p></p>
+              
+            <p>
+                <b>Dr. Mahbuba Akhter</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801552433552  
+            </p>
+            </div>
+            </div>
+          </div> 
+    </div>
+
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-left">
+        <div class="card">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
+            <div class="container">
+                <p></p>
+              
+            <p>
+                <b>Dr. Shariful Islam</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +8801717786726
+            </p>
             </div>
             </div>
           </div> 
     </div>
   </div>
+</div>
 
-  </div>
 
-  <div class="container">
+
+<br>
+<div class="container">
   <div class="row">
-    <div class="column">
-        <div class="container">
+    <div class="col-sm-4">
+        <div class="container" data-aos="fade-right">
         <div class="card">
-            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:33%">
+            <img src="{% static 'img/contacts/male_avatar.png' %}" alt="Avatar" style="width:80%; padding: 10px 10px 10px 10px;">
             <div class="container">
-              <h4><b>Dr. Sumonto kundo</b></h4>
-              <p>Assistant Medical Officer</p>
-              <h6>01720957759 </h6>
+                <p></p>
+            <p>
+                <b>Dr. Sumonto kundo</b> <br>
+                <i class="fa fa-institution"></i>&nbsp;Assistant Medical Officer <br>
+                <i class="fa fa-phone"></i>&nbsp; +88001720957759
+            </p>
             </div>
             </div>
           </div> 
     </div>
+
+
+    <div class="col-sm-4">
+        
+    </div>
+
+    <div class="col-sm-4">
+    </div>
   </div>
-  
-</div>
 </div>
 
+
+
+</section>
 <!-- </body>
 </html> -->
 {% endblock %}

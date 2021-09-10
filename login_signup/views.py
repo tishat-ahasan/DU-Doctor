@@ -73,7 +73,7 @@ def user_login(request):
                 messages.success(request, 'Your account was inactive.')
                 return HttpResponseRedirect(reverse('home'))
         else:
-            messages.success(request, 'Invalid Username or Password')
+            messages.success(request, 'Invalid Password!')
             return HttpResponseRedirect(reverse('home'))
     else:
         return render(request, 'login_signup/login.html', {})
